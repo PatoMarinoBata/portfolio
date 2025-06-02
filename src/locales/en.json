@@ -1,0 +1,26 @@
+{
+  "home": {
+    "title": "Patricio Marino Bata",
+    "subtitle": "Senior Project Manager specialized in IT and Blockchain"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a SR Project Manager who has worked in various IT roles (Fullstack Developer, Business Analyst, Project Coordinator) and found where my impact can be maximized."
+  },
+  "experience": {
+    "title": "Experience"
+  },
+  "education": {
+    "title": "Education & Certifications",
+    "items": [
+      "B.S. in Information Systems (90% completed)",
+      "Scrum Master / Agile methodologies",
+      "Certifications in Jira, Power BI, DevOps"
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "text": "You can reach me through my LinkedIn profile.",
+    "cv_button": "Download CV"
+  }
+}
