@@ -1,7 +1,5 @@
 import React from "react";
 import Navbar from "./Navbar.jsx";
-import React from "react";
-import Navbar from "./Navbar.jsx";
 import { useLanguage } from "./LanguageContext";
 
 export default function Portfolio() { const { texts } = useLanguage();
@@ -103,7 +101,7 @@ export default function Portfolio() { const { texts } = useLanguage();
       {/* Estudios */}
       <section id="studies" className="snap-start h-screen p-10 bg-gray-900">
       <h2 className="text-3xl font-semibold mb-4">{texts.studies.title}</h2>
-<     ul className="list-disc list-inside text-gray-300 space-y-2">
+      <ul className="list-disc list-inside text-gray-300 space-y-2">
         {texts.studies.items.map((item, index) => (
         <li key={index}>{item}</li>
   ))}
