@@ -1,24 +1,26 @@
 import React from "react";
 import Navbar from "./Navbar.jsx";
+import React from "react";
+import Navbar from "./Navbar.jsx";
+import { useLanguage } from "./LanguageContext";
 
-export default function Portfolio() {
+export default function Portfolio() { const { texts } = useLanguage();
+
   return (
     <div className="snap-y snap-mandatory h-screen overflow-y-scroll bg-black text-white scroll-smooth">
       <Navbar />
 
       {/* Home */}
       <section id="home" className="snap-start h-screen pt-20 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900">
-        <h1 className="text-4xl md:text-6xl font-bold">Patricio Marino Bata</h1>
-        <p className="mt-4 text-xl text-gray-300">Senior Project Manager especializado en IT y Blockchain</p>
+      <h1 className="text-4xl md:text-6xl font-bold">{texts.home.title}</h1>
+        <p className="mt-4 text-xl text-gray-300">{texts.home.subtitle}</p>
+
       </section>
 
       {/* Sobre mí */}
       <section id="about" className="snap-start h-screen p-10 flex flex-col justify-center bg-gray-900">
-        <h2 className="text-3xl font-semibold mb-4">Sobre mí</h2>
-        <p>
-          Soy un SR Project Manager que trabajó en diferentes sectores de IT (como Fullstack Developer,
-          Business Analyst y Project Coordinator) y descubrió el lugar donde su trabajo puede tener mayor impacto.
-        </p>
+      <h2 className="text-3xl font-semibold mb-4">{texts.about.title}</h2>
+        <p>{texts.about.description}</p>
       </section>
 
       {/* Experiencia Laboral */}
@@ -100,20 +102,32 @@ export default function Portfolio() {
 
       {/* Estudios */}
       <section id="studies" className="snap-start h-screen p-10 bg-gray-900">
-        <h2 className="text-3xl font-semibold mb-4">Estudios y Certificaciones</h2>
-        <ul className="list-disc list-inside text-gray-300 space-y-2">
-          <li>Lic. en Sistemas de Información (90% completado)</li>
-          <li>Scrum Master / Agile methodologies</li>
-          <li>Certificaciones en Jira, Power BI, DevOps</li>
-        </ul>
+      <h2 className="text-3xl font-semibold mb-4">{texts.studies.title}</h2>
+<     ul className="list-disc list-inside text-gray-300 space-y-2">
+        {texts.studies.items.map((item, index) => (
+        <li key={index}>{item}</li>
+  ))}
+</ul>
+
       </section>
 
       {/* Contacto */}
       <section id="contact" className="snap-start h-screen p-10 bg-gray-950 flex flex-col justify-center items-center">
-        <h2 className="text-3xl font-semibold mb-4">Contacto</h2>
-        <p className="mb-4">Podés contactarme en <a href="https://torre.ai/patriciomarinobata" className="text-blue-400 underline">mi perfil de LinkedIn</a>.</p>
-        <a href="/CV%20Junio%202025,%20Patricio%20Marino%20Bata.pdf" download className="bg-white text-black px-4 py-2 rounded hover:bg-gray-300 transition">Descargar CV</a>
-      </section>
+      <h2 className="text-3xl font-semibold mb-4">{texts.contact.title}</h2>
+<p className="mb-4">
+  {texts.contact.text}{" "}
+  <a href="https://torre.ai/patriciomarinobata" className="text-blue-400 underline">
+    LinkedIn
+  </a>.
+</p>
+<a
+  href="/CV%20Junio%202025,%20Patricio%20Marino%20Bata.pdf"
+  download
+  className="bg-white text-black px-4 py-2 rounded hover:bg-gray-300 transition"
+>
+  {texts.contact.cv}
+</a>
+</section>
     </div>
   );
 }
