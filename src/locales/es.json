@@ -1,4 +1,12 @@
 {
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "studies": "Estudios",
+    "contact": "Contacto",
+    "language": "EN"
+  },
   "home": {
     "title": "Patricio Marino Bata",
     "subtitle": "Senior Project Manager especializado en IT y Blockchain"
@@ -7,10 +15,7 @@
     "title": "Sobre mí",
     "description": "Soy un SR Project Manager que trabajó en diferentes sectores de IT (como Fullstack Developer, Business Analyst y Project Coordinator) y descubrió el lugar donde su trabajo puede tener mayor impacto."
   },
-  "experience": {
-    "title": "Experiencia"
-  },
-  "education": {
+  "studies": {
     "title": "Estudios y Certificaciones",
     "items": [
       "Lic. en Sistemas de Información (90% completado)",
@@ -20,7 +25,7 @@
   },
   "contact": {
     "title": "Contacto",
-    "text": "Podés contactarme a través de mi LinkedIn.",
-    "cv_button": "Descargar CV"
+    "text": "Podés contactarme en",
+    "cv": "Descargar CV"
   }
 }
