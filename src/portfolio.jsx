@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar.jsx";
 import { useLanguage } from "./LanguageContext";
 
 export default function Portfolio() {
   const { texts } = useLanguage();
 
-  // Carrusel de fotos
   const images = [
-    "/images/about/foto1.jpeg",
-    "/images/about/foto2.jpeg",
+    "/images/about/foto1.jpg",
+    "/images/about/foto2.jpg",
     "/images/about/foto3.jpg"
   ];
+
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -30,15 +31,22 @@ export default function Portfolio() {
         <p className="mt-4 text-xl text-gray-300">{texts.home.subtitle}</p>
       </section>
 
-      {/* Sobre mí con carrusel */}
+      {/* Sobre mí con carrusel horizontal animado */}
       <section id="about" className="snap-start h-screen p-10 flex flex-col md:flex-row items-center justify-center bg-gray-900">
         {/* Carrusel */}
-        <div className="w-full md:w-1/2 flex justify-center items-center">
-          <img
-            src={images[current]}
-            alt={`Foto ${current + 1}`}
-            className="w-72 h-72 object-cover rounded-2xl shadow-lg transition-all duration-500"
-          />
+        <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[400px]">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={current}
+              src={images[current]}
+              alt={`Foto ${current + 1}`}
+              initial={{ x: 300, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -300, opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-[90%] max-h-full object-cover rounded-2xl shadow-xl absolute"
+            />
+          </AnimatePresence>
         </div>
 
         {/* Descripción */}
@@ -52,7 +60,7 @@ export default function Portfolio() {
       <section id="experience" className="snap-start min-h-screen p-10 bg-gray-950">
         <h2 className="text-3xl font-semibold mb-10 text-center">Experiencia Laboral</h2>
         <div className="space-y-8">
-          {/* Jobs... (omitidos por brevedad) */}
+          {/* Jobs... */}
         </div>
       </section>
 
