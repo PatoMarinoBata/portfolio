@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Portfolio from "./Portfolio.jsx";// o el componente principal que estés usando
+import Portfolio from "./portfolio.jsx"; // o el componente principal que estés usando
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
