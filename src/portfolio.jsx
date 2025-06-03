@@ -20,7 +20,7 @@ export default function Portfolio() {
     <div className="snap-y snap-mandatory h-screen overflow-y-scroll bg-black text-white scroll-smooth">
       <Navbar />
 
-      <section id="home" className="snap-start h-screen flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900">
+      <section id="home" className="snap-start h-screen pt-20 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900">
         <h1 className="text-4xl md:text-6xl font-bold">Patricio Marino Bata</h1>
         <p className="mt-4 text-xl text-gray-300">Senior Project Manager especializado en IT y Blockchain</p>
       </section>
