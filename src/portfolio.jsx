@@ -7,8 +7,8 @@ export default function Portfolio() {
   const { texts } = useLanguage();
 
   const images = [
-    "/images/about/foto1.jpg",
-    "/images/about/foto2.jpg",
+    "/images/about/foto1.jpeg",
+    "/images/about/foto2.jpeg",
     "/images/about/foto3.jpg"
   ];
 
