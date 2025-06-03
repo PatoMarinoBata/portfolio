@@ -1,3 +1,10 @@
+import React from "react";
+
+export default function Portfolio() {
+  return (
+    <div> 
+        ( 
+
 <section id="experience" className="snap-start min-h-screen p-10 bg-gray-950">
   <h2 className="text-3xl font-semibold mb-10 text-center">Experiencia Laboral</h2>
   <div className="space-y-8">
@@ -81,3 +88,8 @@
 
   </div>
 </section>
+
+}
+    </div>
+  );
+}
