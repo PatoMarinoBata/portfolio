@@ -10,7 +10,7 @@ export default function Portfolio() {
   const images = [
     "/images/about/foto1.jpeg",
     "/images/about/foto2.jpeg",
-    "/images/about/foto3.jpeg"
+    "/images/about/foto3.jpg"
   ];
 
   const [current, setCurrent] = useState(0);
@@ -23,18 +23,19 @@ export default function Portfolio() {
   }, [images.length]);
 
   return (
-    <div className="snap-y snap-mandatory h-screen overflow-y-scroll bg-black text-white scroll-smooth">
+    <div className="min-h-screen overflow-y-scroll bg-black text-white scroll-smooth">
       <Navbar />
 
       {/* Home */}
-      <section id="home" className="snap-start h-screen pt-20 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 text-center px-4">
+      <section id="home" className="min-h-screen pt-24 px-6 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 text-center">
         <h1 className="text-4xl md:text-6xl font-bold">{texts.home.title}</h1>
         <p className="mt-4 text-xl text-gray-300 max-w-xl">{texts.home.subtitle}</p>
       </section>
 
-      {/* Sobre mí con carrusel */}
-      <section id="about" className="snap-start h-screen p-10 flex flex-col md:flex-row items-center justify-center bg-gray-900">
-        <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[400px]">
+      {/* Sobre mí */}
+      <section id="about" className="min-h-screen p-6 md:p-10 flex flex-col md:flex-row items-center justify-center bg-gray-900">
+        {/* Carrusel */}
+        <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[300px] md:h-[400px]">
           <AnimatePresence mode="wait">
             <motion.img
               key={current}
@@ -49,22 +50,23 @@ export default function Portfolio() {
           </AnimatePresence>
         </div>
 
-        <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pl-10 text-left">
+        {/* Descripción */}
+        <div className="w-full md:w-1/2 mt-10 md:mt-0 md:pl-10 text-left">
           <h2 className="text-3xl font-semibold mb-4">{texts.about.title}</h2>
           <p className="text-gray-300">{texts.about.description}</p>
         </div>
       </section>
 
       {/* Experiencia */}
-      <section id="experience" className="snap-start min-h-screen p-10 bg-gray-950">
+      <section id="experience" className="min-h-screen p-6 md:p-10 bg-gray-950">
         <h2 className="text-3xl font-semibold mb-10 text-center">Experiencia Laboral</h2>
         <div className="space-y-8">
-          {/* Insertá aquí tus bloques de experiencia como ya hicimos */}
+          {/* ...Tu experiencia laboral acá */}
         </div>
       </section>
 
       {/* Estudios */}
-      <section id="studies" className="snap-start h-screen p-10 bg-gray-900">
+      <section id="studies" className="min-h-screen p-6 md:p-10 bg-gray-900">
         <h2 className="text-3xl font-semibold mb-4">{texts.studies.title}</h2>
         <ul className="list-disc list-inside text-gray-300 space-y-2">
           {texts.studies.items.map((item, index) => (
@@ -74,9 +76,9 @@ export default function Portfolio() {
       </section>
 
       {/* Contacto */}
-      <section id="contact" className="snap-start h-screen p-10 bg-gray-950 flex flex-col justify-center items-center">
+      <section id="contact" className="min-h-screen p-6 md:p-10 bg-gray-950 flex flex-col justify-center items-center text-center">
         <h2 className="text-3xl font-semibold mb-4">{texts.contact.title}</h2>
-        <p className="mb-4 text-center max-w-md">
+        <p className="mb-4 max-w-md">
           {texts.contact.text}{" "}
           <a
             href="https://www.linkedin.com/in/patricio-marino/"
@@ -97,8 +99,8 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black py-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center px-8 text-gray-500 text-sm">
-        <p className="mb-2 md:mb-0">&copy; {new Date().getFullYear()} Patricio Marino Bata</p>
+      <footer className="bg-black py-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center px-6 text-gray-500 text-sm">
+        <p className="mb-3 md:mb-0">&copy; {new Date().getFullYear()} Patricio Marino Bata</p>
         <div className="flex space-x-4 text-lg">
           <a href="https://www.linkedin.com/in/patricio-marino/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
             <FaLinkedin />
