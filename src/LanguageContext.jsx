@@ -1,34 +1,30 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import es from "./locales/es.json";
-import en from "./locales/en.json";
-
-const languages = { es, en };
+import { defaultTexts } from "./data/defaultTexts";
 
 const LanguageContext = createContext();
 
-export function LanguageProvider({ children }) {
+export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState("es");
+  const [texts, setTexts] = useState(defaultTexts[language]);
 
   useEffect(() => {
-    const stored = localStorage.getItem("lang");
-    if (stored && languages[stored]) {
-      setLanguage(stored);
+    const saved = localStorage.getItem("portfolioTexts");
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      setTexts(parsed[language] || defaultTexts[language]);
+    } else {
+      setTexts(defaultTexts[language]);
     }
-  }, []);
+  }, [language]);
 
-  const toggleLanguage = () => {
-    const nextLang = language === "es" ? "en" : "es";
-    setLanguage(nextLang);
-    localStorage.setItem("lang", nextLang);
-  };
+  const toggleLanguage = () =>
+    setLanguage((prev) => (prev === "es" ? "en" : "es"));
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, texts: languages[language] }}>
+    <LanguageContext.Provider value={{ language, texts, toggleLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
-}
+};
 
-export function useLanguage() {
-  return useContext(LanguageContext);
-}
+export const useLanguage = () => useContext(LanguageContext);
