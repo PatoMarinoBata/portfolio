@@ -32,7 +32,7 @@ export default function Portfolio() {
       </section>
 
       {/* Sobre mí */}
-      <section id="about" className="snap-start h-screen pt-24 md:p-10 flex flex-col md:flex-row items-center justify-center bg-gray-900">
+      <section id="about" className="snap-start h-screen pt-24 p-6 md:p-10 flex flex-col md:flex-row items-center justify-center bg-gray-900">
         <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[300px] md:h-[400px]">
           <AnimatePresence mode="wait">
             <motion.img
@@ -55,15 +55,15 @@ export default function Portfolio() {
       </section>
 
       {/* Experiencia */}
-      <section id="experience" className="snap-start min-h-screen pt-24 md:p-10 bg-gray-950">
+      <section id="experience" className="snap-start min-h-screen pt-24 p-6 md:p-10 bg-gray-950">
         <h2 className="text-3xl font-semibold mb-10 text-center">Experiencia Laboral</h2>
         <div className="space-y-8">
-          {/* experiencia laboral... */}
+          {/* experiencia laboral aquí */}
         </div>
       </section>
 
       {/* Estudios */}
-      <section id="studies" className="snap-start h-screen p-6 md:p-10 bg-gray-900">
+      <section id="studies" className="snap-start h-screen pt-24 p-6 md:p-10 bg-gray-900">
         <h2 className="text-3xl font-semibold mb-4">{texts.studies.title}</h2>
         <ul className="list-disc list-inside text-gray-300 space-y-2">
           {texts.studies.items.map((item, index) => (
@@ -73,7 +73,7 @@ export default function Portfolio() {
       </section>
 
       {/* Contacto */}
-      <section id="contact" className="snap-start h-screen p-6 md:p-10 bg-gray-950 flex flex-col justify-center items-center text-center">
+      <section id="contact" className="snap-start h-screen pt-24 p-6 md:p-10 bg-gray-950 flex flex-col justify-center items-center text-center">
         <h2 className="text-3xl font-semibold mb-4">{texts.contact.title}</h2>
         <p className="mb-4 max-w-md">
           {texts.contact.text}{" "}
