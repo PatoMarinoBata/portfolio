@@ -8,32 +8,27 @@ export const LanguageProvider = ({ children }) => {
   const [texts, setTexts] = useState(defaultTexts["es"]);
 
   useEffect(() => {
-    const saved = localStorage.getItem("portfolioTexts");
-    const fallback = defaultTexts[language];
-
     try {
+      const saved = localStorage.getItem("portfolioTexts");
       if (saved) {
         const parsed = JSON.parse(saved);
-        const loaded = parsed[language];
-
-        // Validar que tenga estructura mínima
+        const langData = parsed[language];
         if (
-          loaded &&
-          loaded.about?.title &&
-          loaded.contact?.title &&
-          loaded.navbar?.home
+          langData?.navbar?.home &&
+          langData?.about?.title &&
+          langData?.contact?.title
         ) {
-          setTexts(loaded);
+          setTexts(langData);
         } else {
-          console.warn("❗ Textos cargados incompletos. Usando valores por defecto.");
-          setTexts(fallback);
+          console.warn("❗ Datos incompletos en localStorage. Usando defaultTexts.");
+          setTexts(defaultTexts[language]);
         }
       } else {
-        setTexts(fallback);
+        setTexts(defaultTexts[language]);
       }
     } catch (e) {
-      console.error("❗ Error al cargar textos. Usando valores por defecto.");
-      setTexts(fallback);
+      console.error("❗ Error al leer textos. Usando defaultTexts.", e);
+      setTexts(defaultTexts[language]);
     }
   }, [language]);
 
