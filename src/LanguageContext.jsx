@@ -16,7 +16,9 @@ export const LanguageProvider = ({ children }) => {
         if (
           langData?.navbar?.home &&
           langData?.about?.title &&
-          langData?.contact?.title
+          langData?.contact?.title &&
+          langData?.experience?.title &&
+          Array.isArray(langData.experience.jobs)
         ) {
           setTexts(langData);
         } else {
