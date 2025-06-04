@@ -5,20 +5,32 @@ const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState("es");
-  const [texts, setTexts] = useState(defaultTexts[language]);
+  const [texts, setTexts] = useState(defaultTexts["es"]);
 
   useEffect(() => {
     const saved = localStorage.getItem("portfolioTexts");
     if (saved) {
       const parsed = JSON.parse(saved);
-      setTexts(parsed[language] || defaultTexts[language]);
+      const langTexts = parsed[language];
+      // Validación: si no hay datos completos, usar los defaults
+      if (
+        langTexts?.about?.title &&
+        langTexts?.contact?.title &&
+        langTexts?.navbar?.home
+      ) {
+        setTexts(langTexts);
+      } else {
+        console.warn("⚠️ Faltan campos en localStorage. Usando valores por defecto.");
+        setTexts(defaultTexts[language]);
+      }
     } else {
       setTexts(defaultTexts[language]);
     }
   }, [language]);
 
-  const toggleLanguage = () =>
+  const toggleLanguage = () => {
     setLanguage((prev) => (prev === "es" ? "en" : "es"));
+  };
 
   return (
     <LanguageContext.Provider value={{ language, texts, toggleLanguage }}>
