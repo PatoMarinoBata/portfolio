@@ -5,6 +5,9 @@ import { useLanguage } from "./LanguageContext";
 
 export default function Portfolio() {
   const { texts } = useLanguage();
+  if (!texts?.about || !texts?.contact || !texts?.navbar) {
+    return <div className="text-white p-10">Cargando contenido...</div>;
+  }  
 
   const images = [
     "/images/about/foto1.jpeg",

@@ -9,28 +9,36 @@ export const LanguageProvider = ({ children }) => {
 
   useEffect(() => {
     const saved = localStorage.getItem("portfolioTexts");
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      const langTexts = parsed[language];
-      // Validación: si no hay datos completos, usar los defaults
-      if (
-        langTexts?.about?.title &&
-        langTexts?.contact?.title &&
-        langTexts?.navbar?.home
-      ) {
-        setTexts(langTexts);
+    const fallback = defaultTexts[language];
+
+    try {
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        const loaded = parsed[language];
+
+        // Validar que tenga estructura mínima
+        if (
+          loaded &&
+          loaded.about?.title &&
+          loaded.contact?.title &&
+          loaded.navbar?.home
+        ) {
+          setTexts(loaded);
+        } else {
+          console.warn("❗ Textos cargados incompletos. Usando valores por defecto.");
+          setTexts(fallback);
+        }
       } else {
-        console.warn("⚠️ Faltan campos en localStorage. Usando valores por defecto.");
-        setTexts(defaultTexts[language]);
+        setTexts(fallback);
       }
-    } else {
-      setTexts(defaultTexts[language]);
+    } catch (e) {
+      console.error("❗ Error al cargar textos. Usando valores por defecto.");
+      setTexts(fallback);
     }
   }, [language]);
 
-  const toggleLanguage = () => {
+  const toggleLanguage = () =>
     setLanguage((prev) => (prev === "es" ? "en" : "es"));
-  };
 
   return (
     <LanguageContext.Provider value={{ language, texts, toggleLanguage }}>
