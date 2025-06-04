@@ -32,7 +32,7 @@ export default function Portfolio() {
       </section>
 
       {/* Sobre mí */}
-      <section id="about" className="snap-start h-screen p-6 md:p-10 flex flex-col md:flex-row items-center justify-center bg-gray-900">
+      <section id="about" className="snap-start h-screen pt-24 md:p-10 flex flex-col md:flex-row items-center justify-center bg-gray-900">
         <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[300px] md:h-[400px]">
           <AnimatePresence mode="wait">
             <motion.img
@@ -55,7 +55,7 @@ export default function Portfolio() {
       </section>
 
       {/* Experiencia */}
-      <section id="experience" className="snap-start min-h-screen p-6 md:p-10 bg-gray-950">
+      <section id="experience" className="snap-start min-h-screen pt-24 md:p-10 bg-gray-950">
         <h2 className="text-3xl font-semibold mb-10 text-center">Experiencia Laboral</h2>
         <div className="space-y-8">
           {/* experiencia laboral... */}
