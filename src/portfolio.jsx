@@ -1,19 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar.jsx";
 import { useLanguage } from "./LanguageContext";
 
 export default function Portfolio() {
   const { texts } = useLanguage();
+  const images = [
+    "/images/about/foto1.jpeg",
+    "/images/about/foto2.jpeg",
+    "/images/about/foto3.jpg",
+  ];
+  const [current, setCurrent] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
 
-  // Validación para evitar errores si textos no están listos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  // Si texts no está listo, mostramos un placeholder
   if (
+    !texts?.home?.title ||
     !texts?.about?.title ||
-    !texts?.contact?.title ||
-    !texts?.navbar?.home ||
-    !texts?.experience?.title
+    !texts?.experience?.title ||
+    !Array.isArray(texts.experience.jobs) ||
+    !texts?.studies?.title ||
+    !Array.isArray(texts.studies.items) ||
+    !texts?.contact?.title
   ) {
     return <div className="text-white p-10">Cargando contenido...</div>;
   }
+
+  const toggleDescription = (index) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
 
   return (
     <div className="snap-y snap-mandatory h-screen overflow-y-scroll bg-black text-white scroll-smooth">
@@ -22,60 +44,71 @@ export default function Portfolio() {
       {/* Home */}
       <section
         id="home"
-        className="snap-start h-screen pt-24 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900"
+        className="snap-start h-screen pt-24 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 text-center px-4"
       >
         <h1 className="text-4xl md:text-6xl font-bold">{texts.home.title}</h1>
-        <p className="mt-4 text-xl text-gray-300">{texts.home.subtitle}</p>
+        <p className="mt-4 text-xl text-gray-300 max-w-xl">{texts.home.subtitle}</p>
       </section>
 
-      {/* Sobre mí */}
+      {/* Sobre mí con carrusel */}
       <section
         id="about"
-        className="snap-start h-screen p-10 flex flex-col md:flex-row items-center justify-center bg-gray-900 gap-10"
+        className="snap-start h-screen pt-24 p-6 md:p-10 flex flex-col md:flex-row items-center justify-center bg-gray-900 gap-10"
       >
-        <div className="w-full md:w-1/2 overflow-hidden rounded-xl shadow-lg max-w-md mx-auto">
-          <div className="whitespace-nowrap animate-slide">
-            <img src="/images/about/foto1.jpeg" alt="Foto 1" className="inline-block w-full" />
-            <img src="/images/about/foto2.jpeg" alt="Foto 2" className="inline-block w-full" />
-            <img src="/images/about/foto3.jpg" alt="Foto 3" className="inline-block w-full" />
-          </div>
+        <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[300px] md:h-[400px]">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={current}
+              src={images[current]}
+              alt={`Foto ${current + 1}`}
+              initial={{ x: 300, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -300, opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-[90%] max-h-full object-cover rounded-2xl shadow-xl absolute"
+            />
+          </AnimatePresence>
         </div>
-        <div className="w-full md:w-1/2 text-center md:text-left">
+
+        <div className="w-full md:w-1/2 mt-10 md:mt-0 md:pl-10 text-center md:text-left">
           <h2 className="text-3xl font-semibold mb-4">{texts.about.title}</h2>
-          <p>{texts.about.description}</p>
+          <p className="text-gray-300">{texts.about.description}</p>
         </div>
       </section>
 
       {/* Experiencia */}
-      <section id="experience" className="snap-start min-h-screen pt-24 p-10 bg-gray-950">
-        <h2 className="text-3xl font-semibold mb-10 text-center">
-          {texts.experience.title}
-        </h2>
-        <div className="space-y-8">
+      <section id="experience" className="snap-start min-h-screen pt-24 p-6 md:p-10 bg-gray-950">
+        <h2 className="text-3xl font-semibold mb-10 text-center">{texts.experience.title}</h2>
+        <div className="space-y-6 max-w-3xl mx-auto">
           {texts.experience.jobs.map((job, idx) => (
-            <div key={idx}>
-              <div className="flex justify-between items-center text-lg font-semibold text-white border-b border-gray-700 pb-1">
-                <span>{job.role}</span>
-                <span>{job.company}</span>
+            <div key={idx} className="border-b border-gray-700 pb-4">
+              <div className="flex justify-between items-center">
+                <div className="text-lg font-semibold">
+                  <span>{job.role}</span>
+                  {job.dates && (
+                    <span className="ml-2 text-sm text-gray-400 italic">{job.dates}</span>
+                  )}
+                </div>
+                <button
+                  onClick={() => toggleDescription(idx)}
+                  className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition"
+                >
+                  {openIndex === idx ? "−" : "+"}
+                </button>
               </div>
-              {job.dates && (
-                <p className="text-sm text-gray-400 italic mt-1">{job.dates}</p>
+              <p className="mt-1 text-lg text-gray-300">{job.company}</p>
+              {openIndex === idx && (
+                <p className="mt-2 text-gray-300 whitespace-pre-line">{job.description}</p>
               )}
-              <p className="mt-2 text-gray-300 whitespace-pre-line">
-                {job.description}
-              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Estudios */}
-      <section
-        id="studies"
-        className="snap-start h-screen pt-24 p-10 bg-gray-900"
-      >
+      {/* Estudios y Certificaciones */}
+      <section id="studies" className="snap-start h-screen pt-24 p-6 md:p-10 bg-gray-900">
         <h2 className="text-3xl font-semibold mb-4">{texts.studies.title}</h2>
-        <ul className="list-disc list-inside text-gray-300 space-y-2">
+        <ul className="list-disc list-inside text-gray-300 space-y-2 max-w-2xl">
           {texts.studies.items.map((item, idx) => (
             <li key={idx}>{item}</li>
           ))}
@@ -85,10 +118,10 @@ export default function Portfolio() {
       {/* Contacto */}
       <section
         id="contact"
-        className="snap-start h-screen pt-24 p-10 bg-gray-950 flex flex-col justify-center items-center"
+        className="snap-start h-screen pt-24 p-6 md:p-10 bg-gray-950 flex flex-col justify-center items-center text-center"
       >
         <h2 className="text-3xl font-semibold mb-4">{texts.contact.title}</h2>
-        <p className="mb-4">
+        <p className="mb-4 max-w-md">
           {texts.contact.text}{" "}
           <a
             href="https://www.linkedin.com/in/patricio-marino/"
