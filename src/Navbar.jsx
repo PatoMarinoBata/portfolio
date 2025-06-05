@@ -7,13 +7,14 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black shadow-md h-20">
+    <header className="fixed top-0 left-0 w-full h-20 bg-black shadow-md z-50">
       <div className="flex justify-between items-center h-full px-6">
+        {/* Nombre a la izquierda */}
         <div className="font-bold text-lg md:text-xl text-white">
           Patricio Marino Bata
         </div>
 
-        {/* Enlaces para desktop */}
+        {/* Enlaces en desktop alineados a la derecha */}
         <nav className="hidden md:flex space-x-6 text-white text-sm md:text-base">
           <a href="#home" className="hover:text-blue-400 transition">
             {texts.navbar.home}
@@ -32,7 +33,7 @@ export default function Navbar() {
           </a>
         </nav>
 
-        {/* Botón idioma en desktop */}
+        {/* Botón de idioma en desktop */}
         <button
           onClick={toggleLanguage}
           className="hidden md:block bg-white text-black px-3 py-1 rounded hover:bg-gray-300 transition text-sm"
@@ -103,5 +104,5 @@ export default function Navbar() {
         </div>
       )}
     </header>
-);
+  );
 }
