@@ -44,9 +44,7 @@ export default function Portfolio() {
     >
       <Navbar />
 
-      {/* ================
-          1) HOME
-      ================ */}
+      {/* HOME */}
       <section
         id="home"
         className="snap-start h-screen flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 px-4 text-center"
@@ -59,9 +57,7 @@ export default function Portfolio() {
         </p>
       </section>
 
-      {/* ================
-          2) SOBRE MÍ (carrusel)
-      ================ */}
+      {/* SOBRE MÍ */}
       <section
         id="about"
         className="snap-start h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
@@ -91,9 +87,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ================
-          3) EXPERIENCIA
-      ================ */}
+      {/* EXPERIENCIA */}
       <section
         id="experience"
         className="snap-start h-screen bg-gray-950 px-4 md:px-10 py-6 overflow-y-auto"
@@ -133,26 +127,24 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ==============================
-          4) ESTUDIOS Y CERTIFICACIONES
-      ============================== */}
+      {/* ESTUDIOS Y CERTIFICACIONES */}
       <section
         id="studies"
-        className="snap-start h-screen bg-gray-900 px-4 md:px-10 py-6 overflow-y-auto"
+        className="snap-start min-h-[70vh] bg-gray-900 px-4 md:px-10 py-6"
       >
-        <h2 className="text-xl md:text-3xl font-semibold mb-4">
-          {texts.studies.title}
-        </h2>
-        <ul className="list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-2 max-w-2xl mx-auto">
-          {texts.studies.items.map((item, idx) => (
-            <li key={idx}>{item}</li>
-          ))}
-        </ul>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-xl md:text-3xl font-semibold mb-4 text-left">
+            {texts.studies.title}
+          </h2>
+          <ul className="list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-2 text-left">
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Consectetur adipiscing elit.</li>
+            <li>Sed do eiusmod tempor incididunt.</li>
+          </ul>
+        </div>
       </section>
 
-      {/* ================
-          5) CONTACTO
-      ================ */}
+      {/* CONTACTO */}
       <section
         id="contact"
         className="snap-start h-screen flex flex-col justify-center items-center bg-gray-950 px-4 md:px-10 text-center"
