@@ -37,9 +37,9 @@ export default function Portfolio() {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 
-  // Variants sutiles para cada sección
-  const sectionVariants = {
-    hidden: { opacity: 0.8, y: 10 },
+  // Variante de animación sutil: fade-in cuando entra al viewport
+  const fadeVariant = {
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
 
@@ -50,36 +50,42 @@ export default function Portfolio() {
       {/* ======================
           1) HOME
       ====================== */}
-      <motion.section
+      <section
         id="home"
         className="snap-start min-h-screen pt-24 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 px-4 text-center"
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
       >
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">
-          {texts.home.title}
-        </h1>
-        <p className="mt-4 text-base md:text-lg lg:text-xl text-gray-300 max-w-xl">
-          {texts.home.subtitle}
-        </p>
-      </motion.section>
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="w-full"
+        >
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">
+            {texts.home.title}
+          </h1>
+          <p className="mt-4 text-base md:text-lg lg:text-xl text-gray-300 max-w-xl mx-auto">
+            {texts.home.subtitle}
+          </p>
+        </motion.div>
+      </section>
 
       {/* ======================
           2) SOBRE MÍ (carrusel)
       ====================== */}
-      <motion.section
+      <section
         id="about"
         className="snap-start pt-24 min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
       >
-        <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[250px] md:h-[350px] lg:h-[400px]">
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[250px] md:h-[350px] lg:h-[400px]"
+        >
           <AnimatePresence mode="wait">
             <motion.img
               key={current}
@@ -92,78 +98,92 @@ export default function Portfolio() {
               className="max-w-[90%] max-h-full object-cover rounded-2xl shadow-xl absolute"
             />
           </AnimatePresence>
-        </div>
+        </motion.div>
 
-        <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-10 text-center md:text-left">
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-10 text-center md:text-left"
+        >
           <h2 className="text-xl md:text-3xl font-semibold mb-4">
             {texts.about.title}
           </h2>
           <p className="text-sm md:text-base lg:text-lg text-gray-300">
             {texts.about.description}
           </p>
-        </div>
-      </motion.section>
+        </motion.div>
+      </section>
 
       {/* ======================
           3) EXPERIENCIA
       ====================== */}
-      <motion.section
+      <section
         id="experience"
         className="snap-start pt-24 bg-gray-950 px-4 md:px-10 pb-12"
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
       >
-        <h2 className="text-xl md:text-3xl font-semibold mb-6 text-center">
-          {texts.experience.title}
-        </h2>
-        <div className="max-w-3xl mx-auto space-y-6">
-          {texts.experience.jobs.map((job, idx) => (
-            <div key={idx} className="border-b border-gray-700 pb-4">
-              <div className="flex justify-between items-center">
-                <div className="text-base md:text-lg font-semibold">
-                  <span>{job.role}</span>
-                  {job.dates && (
-                    <span className="ml-2 text-xs md:text-sm text-gray-400 italic">
-                      {job.dates}
-                    </span>
-                  )}
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto"
+        >
+          <h2 className="text-xl md:text-3xl font-semibold mb-6 text-center">
+            {texts.experience.title}
+          </h2>
+
+          <div className="space-y-6">
+            {texts.experience.jobs.map((job, idx) => (
+              <div key={idx} className="border-b border-gray-700 pb-4">
+                <div className="flex justify-between items-center">
+                  <div className="text-base md:text-lg font-semibold">
+                    <span>{job.role}</span>
+                    {job.dates && (
+                      <span className="ml-2 text-xs md:text-sm text-gray-400 italic">
+                        {job.dates}
+                      </span>
+                    )}
+                  </div>
+                  <button
+                    onClick={() => toggleDescription(idx)}
+                    className="text-xl md:text-2xl font-bold text-blue-400 hover:text-blue-300 transition"
+                  >
+                    {openIndex === idx ? "−" : "+"}
+                  </button>
                 </div>
-                <button
-                  onClick={() => toggleDescription(idx)}
-                  className="text-xl md:text-2xl font-bold text-blue-400 hover:text-blue-300 transition"
-                >
-                  {openIndex === idx ? "−" : "+"}
-                </button>
-              </div>
-              <p className="mt-1 text-sm md:text-base text-gray-300">
-                {job.company}
-              </p>
-              {openIndex === idx && (
-                <p className="mt-2 text-sm md:text-base text-gray-300 whitespace-pre-line">
-                  {job.description}
+                <p className="mt-1 text-sm md:text-base text-gray-300">
+                  {job.company}
                 </p>
-              )}
-            </div>
-          ))}
-        </div>
-      </motion.section>
+                {openIndex === idx && (
+                  <p className="mt-2 text-sm md:text-base text-gray-300 whitespace-pre-line">
+                    {job.description}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
 
       {/* ======================
           4) ESTUDIOS Y CERTIFICACIONES
       ====================== */}
-      <motion.section
+      <section
         id="studies"
         className="snap-start pt-24 pb-16 bg-gray-900 px-4 md:px-10"
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
       >
-        <div className="max-w-3xl mx-auto text-left">
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-left"
+        >
           <h2 className="text-xl md:text-3xl font-semibold mb-4">
             {texts.studies.title}
           </h2>
@@ -172,44 +192,48 @@ export default function Portfolio() {
               <li key={idx}>{item}</li>
             ))}
           </ul>
-        </div>
-      </motion.section>
+        </motion.div>
+      </section>
 
       {/* ======================
           5) CONTACTO
       ====================== */}
-      <motion.section
+      <section
         id="contact"
         className="snap-start pt-24 pb-24 flex flex-col justify-center items-center bg-gray-950 px-4 md:px-10 text-center"
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
       >
-        <h2 className="text-xl md:text-3xl font-semibold mb-4">
-          {texts.contact.title}
-        </h2>
-        <p className="mb-4 text-sm md:text-base lg:text-lg max-w-md">
-          {texts.contact.text}{" "}
-          <a
-            href="https://www.linkedin.com/in/patricio-marino/"
-            className="text-blue-400 underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-          .
-        </p>
-        <a
-          href="/CV%20Junio%202025,%20Patricio%20Marino%20Bata.pdf"
-          download
-          className="bg-white text-black px-4 py-2 rounded hover:bg-gray-300 transition text-sm md:text-base"
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="w-full max-w-md mx-auto"
         >
-          {texts.contact.cv}
-        </a>
-      </motion.section>
+          <h2 className="text-xl md:text-3xl font-semibold mb-4">
+            {texts.contact.title}
+          </h2>
+          <p className="mb-4 text-sm md:text-base lg:text-lg">
+            {texts.contact.text}{" "}
+            <a
+              href="https://www.linkedin.com/in/patricio-marino/"
+              className="text-blue-400 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+            .
+          </p>
+          <a
+            href="/CV%20Junio%202025,%20Patricio%20Marino%20Bata.pdf"
+            download
+            className="bg-white text-black px-4 py-2 rounded hover:bg-gray-300 transition text-sm md:text-base"
+          >
+            {texts.contact.cv}
+          </a>
+        </motion.div>
+      </section>
     </div>
   );
 }
