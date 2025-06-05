@@ -69,7 +69,7 @@ export default function Portfolio() {
             <motion.img
               key={current}
               src={images[current]}
-              alt={Foto ${current + 1}}
+              alt={`Foto ${current + 1}`}
               initial={{ x: 300, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -300, opacity: 0 }}
