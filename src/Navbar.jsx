@@ -1,124 +1,79 @@
 import React, { useState } from "react";
 import { useLanguage } from "./LanguageContext";
-import { FiMenu, FiX } from "react-icons/fi";
 
 export default function Navbar() {
   const { texts, toggleLanguage, language } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const sections = [
+    { id: "home", label: texts.navbar.home },
+    { id: "about", label: texts.navbar.about },
+    { id: "experience", label: texts.navbar.experience },
+    { id: "studies", label: texts.navbar.studies },
+    { id: "contact", label: texts.navbar.contact },
+  ];
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) element.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black text-white shadow-md h-20">
-      <div className="max-w-6xl mx-auto h-full flex items-center justify-between px-6">
-        {/* Nombre a la izquierda */}
-        <div className="text-xl font-bold">Patricio Marino Bata</div>
+    <header className="fixed top-0 w-full bg-black z-50 shadow-md">
+      <nav className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+        <h1 className="text-white text-lg font-bold">Patricio Marino Bata</h1>
 
-        {/* Enlaces desktop */}
-        <ul className="hidden md:flex space-x-6 text-white text-sm md:text-base">
-          <li>
-            <a href="#home" className="hover:text-blue-400 transition">
-              {texts.navbar.home}
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="hover:text-blue-400 transition">
-              {texts.navbar.about}
-            </a>
-          </li>
-          <li>
-            <a href="#experience" className="hover:text-blue-400 transition">
-              {texts.navbar.experience}
-            </a>
-          </li>
-          <li>
-            <a href="#studies" className="hover:text-blue-400 transition">
-              {texts.navbar.studies}
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="hover:text-blue-400 transition">
-              {texts.navbar.contact}
-            </a>
+        {/* Menú en Desktop */}
+        <ul className="hidden md:flex space-x-6 text-white text-sm">
+          {sections.map((sec) => (
+            <li
+              key={sec.id}
+              className="hover:text-blue-400 cursor-pointer transition"
+              onClick={() => scrollToSection(sec.id)}
+            >
+              {sec.label}
+            </li>
+          ))}
+          <li
+            onClick={toggleLanguage}
+            className="cursor-pointer hover:text-blue-400"
+          >
+            {language === "es" ? "EN" : "ES"}
           </li>
         </ul>
 
-        {/* Botón idioma desktop */}
-        <button
-          onClick={toggleLanguage}
-          className="hidden md:block bg-white text-black px-3 py-1 rounded hover:bg-gray-300 transition text-sm"
-        >
-          {language === "es" ? "EN" : "ES"}
-        </button>
+        {/* Botón menú en mobile */}
+        <div className="md:hidden">
+          <button
+            className="text-white focus:outline-none"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
+          </button>
+        </div>
+      </nav>
 
-        {/* Burger mobile */}
-        <button
-          className="md:hidden text-white text-2xl"
-          onClick={() => setMenuOpen((prev) => !prev)}
-        >
-          {menuOpen ? <FiX /> : <FiMenu />}
-        </button>
-      </div>
-
-      {/* Menú desplegable mobile */}
+      {/* Menú desplegable en mobile */}
       {menuOpen && (
-        <ul className="md:hidden absolute top-20 left-0 w-full bg-black text-center space-y-4 py-4 z-50">
-          <li>
-            <a
-              href="#home"
-              className="text-white text-lg hover:text-blue-400 transition"
-              onClick={() => setMenuOpen(false)}
+        <div className="md:hidden bg-black px-4 py-2">
+          {sections.map((sec) => (
+            <div
+              key={sec.id}
+              className="py-2 text-white border-b border-gray-700"
+              onClick={() => scrollToSection(sec.id)}
             >
-              {texts.navbar.home}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#about"
-              className="text-white text-lg hover:text-blue-400 transition"
-              onClick={() => setMenuOpen(false)}
-            >
-              {texts.navbar.about}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#experience"
-              className="text-white text-lg hover:text-blue-400 transition"
-              onClick={() => setMenuOpen(false)}
-            >
-              {texts.navbar.experience}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#studies"
-              className="text-white text-lg hover:text-blue-400 transition"
-              onClick={() => setMenuOpen(false)}
-            >
-              {texts.navbar.studies}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              className="text-white text-lg hover:text-blue-400 transition"
-              onClick={() => setMenuOpen(false)}
-            >
-              {texts.navbar.contact}
-            </a>
-          </li>
-          <li>
-            <button
-              onClick={() => {
-                toggleLanguage();
-                setMenuOpen(false);
-              }}
-              className="mt-2 bg-white text-black px-4 py-2 rounded hover:bg-gray-300 transition text-base"
-            >
-              {language === "es" ? "EN" : "ES"}
-            </button>
-          </li>
-        </ul>
+              {sec.label}
+            </div>
+          ))}
+          <div
+            onClick={toggleLanguage}
+            className="py-2 text-white border-b border-gray-700"
+          >
+            {language === "es" ? "EN" : "ES"}
+          </div>
+        </div>
       )}
-    </nav>
+    </header>
   );
 }
