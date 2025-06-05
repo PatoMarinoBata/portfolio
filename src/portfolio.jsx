@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar.jsx";
 import { useLanguage } from "./LanguageContext";
 
 export default function Portfolio() {
   const { texts } = useLanguage();
-  const [openIndex, setOpenIndex] = useState(null);
 
   // Carrusel de “Sobre mí”
   const images = [
@@ -20,7 +20,11 @@ export default function Portfolio() {
     return () => clearInterval(interval);
   }, []);
 
-  // Validación básica
+  // Estado para desplegar/ocultar descripciones en “Experiencia”
+  const [openIndex, setOpenIndex] = useState(null);
+  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+
+  // Validación mínima antes de renderizar
   if (
     !texts?.home?.title ||
     !texts?.home?.subtitle ||
@@ -36,8 +40,6 @@ export default function Portfolio() {
   ) {
     return <div className="text-white p-10">Cargando contenido...</div>;
   }
-
-  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
   return (
     <div className="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth bg-black text-white pt-20">
@@ -60,11 +62,18 @@ export default function Portfolio() {
         className="snap-start h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
       >
         <div className="w-full md:w-1/2 h-[250px] md:h-[350px] lg:h-[400px] overflow-hidden relative rounded-2xl shadow-xl">
-          <img
-            src={images[current]}
-            alt={`Foto ${current + 1}`}
-            className="object-cover w-full h-full animate-fade"
-          />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={current}
+              src={images[current]}
+              alt={`Foto ${current + 1}`}
+              initial={{ x: 300, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -300, opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              className="object-cover w-full h-full"
+            />
+          </AnimatePresence>
         </div>
         <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pl-10 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-semibold mb-4">
@@ -116,7 +125,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* 4) ESTUDIOS */}
+      {/* 4) ESTUDIOS Y CERTIFICACIONES */}
       <section
         id="studies"
         className="snap-start h-screen bg-gray-900 px-4 md:px-10 py-8 overflow-y-auto"
