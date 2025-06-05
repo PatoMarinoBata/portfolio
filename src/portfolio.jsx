@@ -21,7 +21,7 @@ export default function Portfolio() {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  // Si los textos aún no están definidos, mostramos un estado de carga
+  // Validación de textos cargados
   if (
     !texts?.home?.title ||
     !texts?.about?.title ||
@@ -38,16 +38,30 @@ export default function Portfolio() {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 
+  // Animaciones reuseables para secciones
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="snap-y snap-mandatory overflow-y-auto bg-black text-white scroll-smooth">
+    <div
+      className="h-screen snap-y snap-mandatory overflow-y-scroll bg-black text-white scroll-smooth"
+      style={{ scrollPaddingTop: "4.5rem" }}
+    >
       <Navbar />
 
       {/* ======================
           1) HOME
       ====================== */}
-      <section
+      <motion.section
         id="home"
-        className="snap-start min-h-screen pt-20 scroll-mt-20 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 px-4 text-center"
+        className="snap-start h-screen flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 px-4 text-center"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.8 }}
       >
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">
           {texts.home.title}
@@ -55,14 +69,19 @@ export default function Portfolio() {
         <p className="mt-4 text-base md:text-lg lg:text-xl text-gray-300 max-w-xl">
           {texts.home.subtitle}
         </p>
-      </section>
+      </motion.section>
 
       {/* ======================
           2) SOBRE MÍ (carrusel)
       ====================== */}
-      <section
+      <motion.section
         id="about"
-        className="snap-start min-h-screen pt-20 scroll-mt-20 flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
+        className="snap-start h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.8 }}
       >
         <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[250px] md:h-[350px] lg:h-[400px]">
           <AnimatePresence mode="wait">
@@ -87,14 +106,19 @@ export default function Portfolio() {
             {texts.about.description}
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* ======================
           3) EXPERIENCIA
       ====================== */}
-      <section
+      <motion.section
         id="experience"
-        className="snap-start pt-20 scroll-mt-20 bg-gray-950 px-4 md:px-10 py-6"
+        className="snap-start h-screen bg-gray-950 px-4 md:px-10 py-6 overflow-y-auto"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.8 }}
       >
         <h2 className="text-xl md:text-3xl font-semibold mb-6 text-center">
           {texts.experience.title}
@@ -129,14 +153,19 @@ export default function Portfolio() {
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* ======================
           4) ESTUDIOS Y CERTIFICACIONES
       ====================== */}
-      <section
+      <motion.section
         id="studies"
-        className="snap-start min-h-screen pt-20 scroll-mt-20 bg-gray-900 px-4 md:px-10 py-6 overflow-y-auto"
+        className="snap-start h-screen bg-gray-900 px-4 md:px-10 py-6 overflow-y-auto"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.8 }}
       >
         <div className="max-w-3xl mx-auto text-left">
           <h2 className="text-xl md:text-3xl font-semibold mb-4">
@@ -148,14 +177,19 @@ export default function Portfolio() {
             ))}
           </ul>
         </div>
-      </section>
+      </motion.section>
 
       {/* ======================
           5) CONTACTO
       ====================== */}
-      <section
+      <motion.section
         id="contact"
-        className="snap-start min-h-screen pt-20 scroll-mt-20 flex flex-col justify-center items-center bg-gray-950 px-4 md:px-10 text-center"
+        className="snap-start h-screen flex flex-col justify-center items-center bg-gray-950 px-4 md:px-10 text-center"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.8 }}
       >
         <h2 className="text-xl md:text-3xl font-semibold mb-4">
           {texts.contact.title}
@@ -170,6 +204,7 @@ export default function Portfolio() {
           >
             LinkedIn
           </a>
+          .
         </p>
         <a
           href="/CV%20Junio%202025,%20Patricio%20Marino%20Bata.pdf"
@@ -178,7 +213,7 @@ export default function Portfolio() {
         >
           {texts.contact.cv}
         </a>
-      </section>
+      </motion.section>
     </div>
   );
 }
