@@ -4,7 +4,7 @@ import Navbar from "./Navbar.jsx";
 import { useLanguage } from "./LanguageContext";
 
 export default function Portfolio() {
-  const { texts } = useLanguage();
+  const { texts, language } = useLanguage();
 
   const images = [
     "/images/about/foto1.jpeg",
@@ -37,7 +37,6 @@ export default function Portfolio() {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 
-  // Variante de animación sutil: fade-in cuando entra al viewport
   const fadeVariant = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -47,9 +46,7 @@ export default function Portfolio() {
     <div className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory bg-black text-white">
       <Navbar />
 
-      {/* ======================
-          1) HOME
-      ====================== */}
+      {/* 1) HOME */}
       <section
         id="home"
         className="snap-start min-h-screen pt-24 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 px-4 text-center"
@@ -71,9 +68,7 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* ======================
-          2) SOBRE MÍ (carrusel)
-      ====================== */}
+      {/* 2) SOBRE MÍ */}
       <section
         id="about"
         className="snap-start pt-24 min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
@@ -117,9 +112,7 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* ======================
-          3) EXPERIENCIA
-      ====================== */}
+      {/* 3) EXPERIENCIA */}
       <section
         id="experience"
         className="snap-start pt-24 bg-gray-950 px-4 md:px-10 pb-12"
@@ -169,9 +162,7 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* ======================
-          4) ESTUDIOS Y CERTIFICACIONES
-      ====================== */}
+      {/* 4) ESTUDIOS */}
       <section
         id="studies"
         className="snap-start pt-24 pb-16 bg-gray-900 px-4 md:px-10"
@@ -195,9 +186,7 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* ======================
-          5) CONTACTO
-      ====================== */}
+      {/* 5) CONTACTO */}
       <section
         id="contact"
         className="snap-start pt-24 pb-24 flex flex-col justify-center items-center bg-gray-950 px-4 md:px-10 text-center"
@@ -225,8 +214,14 @@ export default function Portfolio() {
             </a>
             .
           </p>
+
+          {/* ✅ Botón que cambia el archivo según el idioma */}
           <a
-            href="/CV%20Junio%202025,%20Patricio%20Marino%20Bata.pdf"
+            href={
+              language === "es"
+                ? "/CV_PatricioMarino_ES.pdf"
+                : "/CV_PatricioMarino_EN.pdf"
+            }
             download
             className="bg-white text-black px-4 py-2 rounded hover:bg-gray-300 transition text-sm md:text-base"
           >
