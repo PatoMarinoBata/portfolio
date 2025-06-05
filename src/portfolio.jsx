@@ -21,6 +21,7 @@ export default function Portfolio() {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  // Si los textos aún no están definidos, mostramos un estado de carga
   if (
     !texts?.home?.title ||
     !texts?.about?.title ||
@@ -38,18 +39,15 @@ export default function Portfolio() {
   };
 
   return (
-    <div
-      className="h-screen snap-y snap-mandatory overflow-y-scroll bg-black text-white scroll-smooth"
-      style={{ scrollPaddingTop: "4.5rem" }}
-    >
+    <div className="snap-y snap-mandatory overflow-y-auto bg-black text-white scroll-smooth">
       <Navbar />
 
-      {/* ================
+      {/* ======================
           1) HOME
-      ================ */}
+      ====================== */}
       <section
         id="home"
-        className="snap-start h-screen flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 px-4 text-center"
+        className="snap-start min-h-screen pt-20 scroll-mt-20 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 px-4 text-center"
       >
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">
           {texts.home.title}
@@ -59,12 +57,12 @@ export default function Portfolio() {
         </p>
       </section>
 
-      {/* ================
+      {/* ======================
           2) SOBRE MÍ (carrusel)
-      ================ */}
+      ====================== */}
       <section
         id="about"
-        className="snap-start h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
+        className="snap-start min-h-screen pt-20 scroll-mt-20 flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
       >
         <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[250px] md:h-[350px] lg:h-[400px]">
           <AnimatePresence mode="wait">
@@ -91,19 +89,19 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ================
+      {/* ======================
           3) EXPERIENCIA
-      ================ */}
+      ====================== */}
       <section
         id="experience"
-        className="snap-start h-screen bg-gray-950 px-4 md:px-10 py-6 overflow-y-auto"
+        className="snap-start pt-20 scroll-mt-20 bg-gray-950 px-4 md:px-10 py-6"
       >
         <h2 className="text-xl md:text-3xl font-semibold mb-6 text-center">
           {texts.experience.title}
         </h2>
         <div className="max-w-3xl mx-auto space-y-6">
           {texts.experience.jobs.map((job, idx) => (
-            <div key={idx} className="border-b border-gray-700 pb-4 pl-4">
+            <div key={idx} className="border-b border-gray-700 pb-4">
               <div className="flex justify-between items-center">
                 <div className="text-base md:text-lg font-semibold">
                   <span>{job.role}</span>
@@ -133,29 +131,29 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ==============================
+      {/* ======================
           4) ESTUDIOS Y CERTIFICACIONES
-      ============================== */}
+      ====================== */}
       <section
         id="studies"
-        className="snap-start h-screen bg-gray-900 px-4 md:px-10 py-6 overflow-y-auto"
+        className="snap-start min-h-screen pt-20 scroll-mt-20 bg-gray-900 px-4 md:px-10 py-6 overflow-y-auto"
       >
         <h2 className="text-xl md:text-3xl font-semibold mb-4">
           {texts.studies.title}
         </h2>
-        <ul className="list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-2 max-w-2xl mx-auto">
+        <ul className="list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-2 max-w-2xl">
           {texts.studies.items.map((item, idx) => (
             <li key={idx}>{item}</li>
           ))}
         </ul>
       </section>
 
-      {/* ================
+      {/* ======================
           5) CONTACTO
-      ================ */}
+      ====================== */}
       <section
         id="contact"
-        className="snap-start h-screen flex flex-col justify-center items-center bg-gray-950 px-4 md:px-10 text-center"
+        className="snap-start min-h-screen pt-20 scroll-mt-20 flex flex-col justify-center items-center bg-gray-950 px-4 md:px-10 text-center"
       >
         <h2 className="text-xl md:text-3xl font-semibold mb-4">
           {texts.contact.title}
@@ -170,7 +168,6 @@ export default function Portfolio() {
           >
             LinkedIn
           </a>
-          .
         </p>
         <a
           href="/CV%20Junio%202025,%20Patricio%20Marino%20Bata.pdf"
