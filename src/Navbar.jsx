@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { useLanguage } from "./LanguageContext";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const { texts, toggleLanguage, language } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const sections = [
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false); // Cierra el menú en mobile
+  };
+
+  const links = [
     { id: "home", label: texts.navbar.home },
     { id: "about", label: texts.navbar.about },
     { id: "experience", label: texts.navbar.experience },
@@ -13,65 +20,58 @@ export default function Navbar() {
     { id: "contact", label: texts.navbar.contact },
   ];
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) element.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false);
-  };
-
   return (
-    <header className="fixed top-0 w-full bg-black z-50 shadow-md">
-      <nav className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <h1 className="text-white text-lg font-bold">Patricio Marino Bata</h1>
+    <header className="fixed top-0 w-full z-50 bg-black bg-opacity-95 h-28 flex items-center px-4 md:px-10 shadow-lg">
+      <div className="flex justify-between items-center w-full">
+        {/* Logo o Nombre */}
+        <div className="text-white text-xl font-bold">Patricio Marino Bata</div>
 
-        {/* Menú en Desktop */}
-        <ul className="hidden md:flex space-x-6 text-white text-sm">
-          {sections.map((sec) => (
-            <li
-              key={sec.id}
-              className="hover:text-blue-400 cursor-pointer transition"
-              onClick={() => scrollToSection(sec.id)}
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex space-x-6 items-center">
+          {links.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollToSection(link.id)}
+              className="text-white hover:text-blue-400 transition"
             >
-              {sec.label}
-            </li>
+              {link.label}
+            </button>
           ))}
-          <li
-            onClick={toggleLanguage}
-            className="cursor-pointer hover:text-blue-400"
-          >
-            {language === "es" ? "EN" : "ES"}
-          </li>
-        </ul>
-
-        {/* Botón menú en mobile */}
-        <div className="md:hidden">
           <button
-            className="text-white focus:outline-none"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            ☰
-          </button>
-        </div>
-      </nav>
-
-      {/* Menú desplegable en mobile */}
-      {menuOpen && (
-        <div className="md:hidden bg-black px-4 py-2">
-          {sections.map((sec) => (
-            <div
-              key={sec.id}
-              className="py-2 text-white border-b border-gray-700"
-              onClick={() => scrollToSection(sec.id)}
-            >
-              {sec.label}
-            </div>
-          ))}
-          <div
             onClick={toggleLanguage}
-            className="py-2 text-white border-b border-gray-700"
+            className="ml-4 bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-400 text-sm"
           >
             {language === "es" ? "EN" : "ES"}
-          </div>
+          </button>
+        </nav>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden text-white"
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="absolute top-28 left-0 w-full bg-black border-t border-gray-700 flex flex-col items-center py-4 space-y-4 md:hidden z-50">
+          {links.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollToSection(link.id)}
+              className="text-white hover:text-blue-400 transition"
+            >
+              {link.label}
+            </button>
+          ))}
+          <button
+            onClick={toggleLanguage}
+            className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-400 text-sm"
+          >
+            {language === "es" ? "EN" : "ES"}
+          </button>
         </div>
       )}
     </header>
