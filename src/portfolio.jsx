@@ -44,7 +44,7 @@ export default function Portfolio() {
       {/* HOME */}
       <section
         id="home"
-        className="snap-start h-screen flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 px-4 text-center"
+        className="snap-start min-h-screen pt-24 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 px-4 text-center"
       >
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">
           {texts.home.title}
@@ -57,7 +57,7 @@ export default function Portfolio() {
       {/* SOBRE MÍ */}
       <section
         id="about"
-        className="snap-start h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
+        className="snap-start pt-24 min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
       >
         <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[250px] md:h-[350px] lg:h-[400px]">
           <AnimatePresence mode="wait">
@@ -87,12 +87,12 @@ export default function Portfolio() {
       {/* EXPERIENCIA */}
       <section
         id="experience"
-        className="snap-start h-screen pt-20 bg-gray-950 px-4 md:px-10 pb-6"
+        className="snap-start pt-24 bg-gray-950 px-4 md:px-10 pb-12"
       >
         <h2 className="text-xl md:text-3xl font-semibold mb-6 text-center">
           {texts.experience.title}
         </h2>
-        <div className="max-w-3xl mx-auto space-y-6 overflow-hidden">
+        <div className="max-w-3xl mx-auto space-y-6">
           {texts.experience.jobs.map((job, idx) => (
             <div key={idx} className="border-b border-gray-700 pb-4">
               <div className="flex justify-between items-center">
@@ -127,7 +127,7 @@ export default function Portfolio() {
       {/* ESTUDIOS */}
       <section
         id="studies"
-        className="snap-start h-screen pt-20 bg-gray-900 px-4 md:px-10 pb-6 flex flex-col justify-start"
+        className="snap-start pt-24 pb-16 bg-gray-900 px-4 md:px-10"
       >
         <div className="max-w-3xl mx-auto text-left">
           <h2 className="text-xl md:text-3xl font-semibold mb-4">
@@ -144,7 +144,7 @@ export default function Portfolio() {
       {/* CONTACTO */}
       <section
         id="contact"
-        className="snap-start h-screen flex flex-col justify-center items-center bg-gray-950 px-4 md:px-10 text-center"
+        className="snap-start pt-24 pb-24 flex flex-col justify-center items-center bg-gray-950 px-4 md:px-10 text-center"
       >
         <h2 className="text-xl md:text-3xl font-semibold mb-4">
           {texts.contact.title}
