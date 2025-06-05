@@ -20,7 +20,6 @@ export default function Portfolio() {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  // Si texts no está listo, mostramos un placeholder
   if (
     !texts?.home?.title ||
     !texts?.about?.title ||
@@ -44,16 +43,16 @@ export default function Portfolio() {
       {/* Home */}
       <section
         id="home"
-        className="snap-start h-screen pt-24 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 text-center px-4"
+        className="snap-start h-screen pt-24 px-4 scroll-mt-20 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 text-center"
       >
         <h1 className="text-4xl md:text-6xl font-bold">{texts.home.title}</h1>
         <p className="mt-4 text-xl text-gray-300 max-w-xl">{texts.home.subtitle}</p>
       </section>
 
-      {/* Sobre mí con carrusel */}
+      {/* Sobre mí */}
       <section
         id="about"
-        className="snap-start h-screen pt-24 p-6 md:p-10 flex flex-col md:flex-row items-center justify-center bg-gray-900 gap-10"
+        className="snap-start h-screen pt-24 px-6 md:px-10 scroll-mt-20 flex flex-col md:flex-row items-center justify-center bg-gray-900 gap-10"
       >
         <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[300px] md:h-[400px]">
           <AnimatePresence mode="wait">
@@ -77,7 +76,10 @@ export default function Portfolio() {
       </section>
 
       {/* Experiencia */}
-      <section id="experience" className="snap-start min-h-screen pt-24 p-6 md:p-10 bg-gray-950">
+      <section
+        id="experience"
+        className="snap-start min-h-screen pt-24 px-6 md:px-10 scroll-mt-20 bg-gray-950"
+      >
         <h2 className="text-3xl font-semibold mb-10 text-center">{texts.experience.title}</h2>
         <div className="space-y-6 max-w-3xl mx-auto">
           {texts.experience.jobs.map((job, idx) => (
@@ -86,7 +88,9 @@ export default function Portfolio() {
                 <div className="text-lg font-semibold">
                   <span>{job.role}</span>
                   {job.dates && (
-                    <span className="ml-2 text-sm text-gray-400 italic">{job.dates}</span>
+                    <span className="ml-2 text-sm text-gray-400 italic">
+                      {job.dates}
+                    </span>
                   )}
                 </div>
                 <button
@@ -98,7 +102,9 @@ export default function Portfolio() {
               </div>
               <p className="mt-1 text-lg text-gray-300">{job.company}</p>
               {openIndex === idx && (
-                <p className="mt-2 text-gray-300 whitespace-pre-line">{job.description}</p>
+                <p className="mt-2 text-gray-300 whitespace-pre-line">
+                  {job.description}
+                </p>
               )}
             </div>
           ))}
@@ -106,7 +112,10 @@ export default function Portfolio() {
       </section>
 
       {/* Estudios y Certificaciones */}
-      <section id="studies" className="snap-start h-screen pt-24 p-6 md:p-10 bg-gray-900">
+      <section
+        id="studies"
+        className="snap-start h-screen pt-24 px-6 md:px-10 scroll-mt-20 bg-gray-900"
+      >
         <h2 className="text-3xl font-semibold mb-4">{texts.studies.title}</h2>
         <ul className="list-disc list-inside text-gray-300 space-y-2 max-w-2xl">
           {texts.studies.items.map((item, idx) => (
@@ -118,7 +127,7 @@ export default function Portfolio() {
       {/* Contacto */}
       <section
         id="contact"
-        className="snap-start h-screen pt-24 p-6 md:p-10 bg-gray-950 flex flex-col justify-center items-center text-center"
+        className="snap-start h-screen pt-24 px-6 md:px-10 scroll-mt-20 bg-gray-950 flex flex-col justify-center items-center text-center"
       >
         <h2 className="text-3xl font-semibold mb-4">{texts.contact.title}</h2>
         <p className="mb-4 max-w-md">
