@@ -1,3 +1,12 @@
-# Patricio Marino Bata Portfolio
-
-This is a React + Tailwind portfolio project inspired by BakerLaw.com, featuring dynamic full-page scroll sections.
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patricio Marino Bata - Portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
