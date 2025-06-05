@@ -138,14 +138,16 @@ export default function Portfolio() {
         id="studies"
         className="snap-start min-h-screen pt-20 scroll-mt-20 bg-gray-900 px-4 md:px-10 py-6 overflow-y-auto"
       >
-        <h2 className="text-xl md:text-3xl font-semibold mb-4">
-          {texts.studies.title}
-        </h2>
-        <ul className="list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-2 max-w-2xl">
-          {texts.studies.items.map((item, idx) => (
-            <li key={idx}>{item}</li>
-          ))}
-        </ul>
+        <div className="max-w-3xl mx-auto text-left">
+          <h2 className="text-xl md:text-3xl font-semibold mb-4">
+            {texts.studies.title}
+          </h2>
+          <ul className="list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-2">
+            {texts.studies.items.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       {/* ======================
