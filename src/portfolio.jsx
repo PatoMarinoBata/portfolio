@@ -39,7 +39,7 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="snap-y snap-mandatory overflow-y-auto bg-black text-white scroll-smooth">
+    <div className="h-screen snap-y snap-mandatory overflow-y-scroll bg-black text-white scroll-smooth">
       <Navbar />
 
       {/* ======================
