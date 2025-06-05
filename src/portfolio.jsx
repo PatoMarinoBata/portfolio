@@ -37,14 +37,27 @@ export default function Portfolio() {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 
+  // Variants sutiles para cada sección
+  const sectionVariants = {
+    hidden: { opacity: 0.8, y: 10 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <div className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory bg-black text-white">
       <Navbar />
 
-      {/* HOME */}
-      <section
+      {/* ======================
+          1) HOME
+      ====================== */}
+      <motion.section
         id="home"
         className="snap-start min-h-screen pt-24 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 px-4 text-center"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
       >
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">
           {texts.home.title}
@@ -52,12 +65,19 @@ export default function Portfolio() {
         <p className="mt-4 text-base md:text-lg lg:text-xl text-gray-300 max-w-xl">
           {texts.home.subtitle}
         </p>
-      </section>
+      </motion.section>
 
-      {/* SOBRE MÍ */}
-      <section
+      {/* ======================
+          2) SOBRE MÍ (carrusel)
+      ====================== */}
+      <motion.section
         id="about"
         className="snap-start pt-24 min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
       >
         <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[250px] md:h-[350px] lg:h-[400px]">
           <AnimatePresence mode="wait">
@@ -82,12 +102,19 @@ export default function Portfolio() {
             {texts.about.description}
           </p>
         </div>
-      </section>
+      </motion.section>
 
-      {/* EXPERIENCIA */}
-      <section
+      {/* ======================
+          3) EXPERIENCIA
+      ====================== */}
+      <motion.section
         id="experience"
         className="snap-start pt-24 bg-gray-950 px-4 md:px-10 pb-12"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
       >
         <h2 className="text-xl md:text-3xl font-semibold mb-6 text-center">
           {texts.experience.title}
@@ -122,12 +149,19 @@ export default function Portfolio() {
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      {/* ESTUDIOS */}
-      <section
+      {/* ======================
+          4) ESTUDIOS Y CERTIFICACIONES
+      ====================== */}
+      <motion.section
         id="studies"
         className="snap-start pt-24 pb-16 bg-gray-900 px-4 md:px-10"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
       >
         <div className="max-w-3xl mx-auto text-left">
           <h2 className="text-xl md:text-3xl font-semibold mb-4">
@@ -139,12 +173,19 @@ export default function Portfolio() {
             ))}
           </ul>
         </div>
-      </section>
+      </motion.section>
 
-      {/* CONTACTO */}
-      <section
+      {/* ======================
+          5) CONTACTO
+      ====================== */}
+      <motion.section
         id="contact"
         className="snap-start pt-24 pb-24 flex flex-col justify-center items-center bg-gray-950 px-4 md:px-10 text-center"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
       >
         <h2 className="text-xl md:text-3xl font-semibold mb-4">
           {texts.contact.title}
@@ -159,6 +200,7 @@ export default function Portfolio() {
           >
             LinkedIn
           </a>
+          .
         </p>
         <a
           href="/CV%20Junio%202025,%20Patricio%20Marino%20Bata.pdf"
@@ -167,7 +209,7 @@ export default function Portfolio() {
         >
           {texts.contact.cv}
         </a>
-      </section>
+      </motion.section>
     </div>
   );
 }
