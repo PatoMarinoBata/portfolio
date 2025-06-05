@@ -21,7 +21,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-black bg-opacity-95 h-28 flex items-center px-4 md:px-10 shadow-lg">
+  <nav className="fixed top-0 left-0 w-full h-18 bg-black z-50 flex items-center justify-between px-6 shadow-md">
       <div className="flex justify-between items-center w-full">
         {/* Logo o Nombre */}
         <div className="text-white text-xl font-bold">Patricio Marino Bata</div>
