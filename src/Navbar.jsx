@@ -21,12 +21,13 @@ export default function Navbar() {
   ];
 
   return (
-  <nav className="fixed top-0 left-0 w-full h-18 bg-black z-50 flex items-center justify-between px-6 shadow-md">
+    <header className="fixed top-0 left-0 w-full h-18 bg-black z-50 flex items-center justify-between px-6 shadow-md">
+      {/* Contenedor Flex que reparte espacio entre logo y menús */}
       <div className="flex justify-between items-center w-full">
         {/* Logo o Nombre */}
         <div className="text-white text-xl font-bold">Patricio Marino Bata</div>
 
-        {/* Desktop Menu */}
+        {/* Menú en Desktop (visible a partir de md) */}
         <nav className="hidden md:flex space-x-6 items-center">
           {links.map((link) => (
             <button
@@ -45,7 +46,7 @@ export default function Navbar() {
           </button>
         </nav>
 
-        {/* Mobile Menu Toggle */}
+        {/* Botón de menú en Mobile (visible cuando < md) */}
         <button
           className="md:hidden text-white"
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -54,9 +55,9 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Menú desplegable para Mobile */}
       {menuOpen && (
-        <div className="absolute top-28 left-0 w-full bg-black border-t border-gray-700 flex flex-col items-center py-4 space-y-4 md:hidden z-50">
+        <div className="absolute top-18 left-0 w-full bg-black border-t border-gray-700 flex flex-col items-center py-4 space-y-4 md:hidden z-50">
           {links.map((link) => (
             <button
               key={link.id}
