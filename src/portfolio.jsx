@@ -15,6 +15,7 @@ export default function Portfolio() {
   const [openJobIndex, setOpenJobIndex] = useState(null);
   const [openCertIndex, setOpenCertIndex] = useState(null);
 
+  // Carousel auto-advance every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
@@ -22,6 +23,7 @@ export default function Portfolio() {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  // Show loading state until all required text fields are defined
   if (
     !texts?.home?.title ||
     !texts?.about?.title ||
@@ -42,12 +44,13 @@ export default function Portfolio() {
     setOpenCertIndex((prev) => (prev === index ? null : index));
   };
 
+  // Fade-in animation variant for sections
   const fadeVariant = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
 
-  // Datos de certificaciones organizados por categoría (DevOps y AI movidos al último bloque)
+  // Certifications data (DevOps and AI items merged into last category)
   const certifications = [
     {
       title: "Agile Project Management",
@@ -86,12 +89,10 @@ export default function Portfolio() {
       title: "Development, Analysis and Management Tools",
       items: [
         "ClickUp Admin Certificate of Completion",
-        "Power BI Essential Training",
-        "Salesforce esencial",
-        "Tableau esencial",
-        // Items moved from DevOps:
+        "Power BI Essentials",
+        "Salesforce Essentials",
+        "Tableau Essentials",
         "DevOps Foundations",
-        // Items moved from AI for Project Management:
         "AI for Project Management: Managing Risk with Generative AI",
       ],
     },
@@ -223,60 +224,59 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
- {/* ======================
-    4) ESTUDIOS Y CERTIFICACIONES
-====================== */}
-<section
-  id="studies"
-  className="snap-start pt-24 pb-16 bg-gray-900 px-4 md:px-10"
->
-  <motion.div
-    variants={fadeVariant}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
-    transition={{ duration: 0.6 }}
-    className="max-w-3xl mx-auto text-left"
-  >
-    <h2 className="text-xl md:text-3xl font-semibold mb-6">
-      {texts.studies.title}
-    </h2>
+      {/* ======================
+          4) ESTUDIOS Y CERTIFICACIONES
+      ====================== */}
+      <section
+        id="studies"
+        className="snap-start pt-24 pb-16 bg-gray-900 px-4 md:px-10"
+      >
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-left"
+        >
+          <h2 className="text-xl md:text-3xl font-semibold mb-6">
+            {texts.studies.title}
+          </h2>
 
-    {/* Banner destacado de la carrera */}
-    <div className="bg-blue-500/30 border border-blue-400 rounded-lg p-4 mb-6 text-white">
-      <p className="text-sm md:text-base font-medium leading-relaxed">
-        {texts.studies.items[0]}
-      </p>
-    </div>
-
-    {/* Acordeón de certificaciones */}
-    <div className="space-y-6">
-      {certifications.map((cert, idx) => (
-        <div key={idx} className="border-b border-gray-700 pb-4">
-          <div className="flex justify-between items-center">
-            <div className="text-base md:text-lg font-semibold">
-              {cert.title}
-            </div>
-            <button
-              onClick={() => toggleCert(idx)}
-              className="text-xl md:text-2xl font-bold text-blue-400 hover:text-blue-300 transition"
-            >
-              {openCertIndex === idx ? "−" : "+"}
-            </button>
+          {/* Banner destacado de la carrera */}
+          <div className="bg-blue-500/30 border border-blue-400 rounded-lg p-4 mb-6 text-white">
+            <p className="text-sm md:text-base font-medium leading-relaxed">
+              {texts.studies.items[0]}
+            </p>
           </div>
-          {openCertIndex === idx && (
-            <ul className="mt-2 list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-1">
-              {cert.items.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          )}
-        </div>
-      ))}
-    </div>
-  </motion.div>
-</section>
 
+          {/* Acordeón de certificaciones */}
+          <div className="space-y-6">
+            {certifications.map((cert, idx) => (
+              <div key={idx} className="border-b border-gray-700 pb-4">
+                <div className="flex justify-between items-center">
+                  <div className="text-base md:text-lg font-semibold">
+                    {cert.title}
+                  </div>
+                  <button
+                    onClick={() => toggleCert(idx)}
+                    className="text-xl md:text-2xl font-bold text-blue-400 hover:text-blue-300 transition"
+                  >
+                    {openCertIndex === idx ? "−" : "+"}
+                  </button>
+                </div>
+                {openCertIndex === idx && (
+                  <ul className="mt-2 list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-1">
+                    {cert.items.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
 
       {/* ======================
           5) CONTACTO
