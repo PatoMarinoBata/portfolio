@@ -223,58 +223,58 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* ======================
-          4) ESTUDIOS Y CERTIFICACIONES
-      ====================== */}
-      <section
-        id="studies"
-        className="snap-start pt-24 pb-16 bg-gray-900 px-4 md:px-10"
-      >
-        <motion.div
-          variants={fadeVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-left"
-        >
-          <h2 className="text-xl md:text-3xl font-semibold mb-6 text-center">
-            {texts.studies.title}
-          </h2>
+     {/* ======================
+    4) ESTUDIOS Y CERTIFICACIONES
+====================== */}
+<section
+  id="studies"
+  className="snap-start pt-24 pb-16 bg-gray-900 px-4 md:px-10"
+>
+  <motion.div
+    variants={fadeVariant}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.6 }}
+    className="max-w-3xl mx-auto text-left"
+  >
+    <h2 className="text-xl md:text-3xl font-semibold mb-4">
+      {texts.studies.title}
+    </h2>
 
-          {/* CARRERA DESTACADA */}
-          <div className="bg-blue-900 text-white p-4 rounded-lg shadow-md mb-6 border-l-4 border-blue-400">
-            ⚡ <strong>Ingeniería en Sistemas de Información</strong> – UTN FRD<br />
-            90% completado · Graduación estimada: junio 2026
-          </div>
+    {/* Título universitario destacado */}
+    <p className="mb-6 text-sm md:text-base lg:text-lg text-yellow-300 font-medium">
+      ⚡ {texts.studies.items[0]}
+    </p>
 
-          {/* CERTIFICACIONES POR CATEGORÍA */}
-          <div className="space-y-6">
-            {certifications.map((cert, idx) => (
-              <div key={idx} className="border-b border-gray-700 pb-4">
-                <div className="flex justify-between items-center">
-                  <div className="text-base md:text-lg font-semibold">
-                    {cert.title}
-                  </div>
-                  <button
-                    onClick={() => toggleCert(idx)}
-                    className="text-xl md:text-2xl font-bold text-blue-400 hover:text-blue-300 transition"
-                  >
-                    {openCertIndex === idx ? "−" : "+"}
-                  </button>
-                </div>
-                {openCertIndex === idx && (
-                  <ul className="mt-2 list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-1">
-                    {cert.items.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
+    {/* Certificaciones agrupadas */}
+    <div className="space-y-6">
+      {certifications.map((cert, idx) => (
+        <div key={idx} className="border-b border-gray-700 pb-4">
+          <div className="flex justify-between items-center">
+            <div className="text-base md:text-lg font-semibold">
+              {cert.title}
+            </div>
+            <button
+              onClick={() => toggleCert(idx)}
+              className="text-xl md:text-2xl font-bold text-blue-400 hover:text-blue-300 transition"
+            >
+              {openCertIndex === idx ? "−" : "+"}
+            </button>
           </div>
-        </motion.div>
-      </section>
+          {openCertIndex === idx && (
+            <ul className="mt-2 list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-1">
+              {cert.items.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+  </motion.div>
+</section>
+
 
       {/* ======================
           5) CONTACTO
