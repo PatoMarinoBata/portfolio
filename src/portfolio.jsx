@@ -52,51 +52,51 @@ export default function Portfolio() {
     {
       title: "Agile Project Management",
       items: [
-        "Agile Development Practices",
-        "Agile Foundations",
-        "Agile Project Management with Microsoft Project",
-        "Agile Requirements Foundations",
-        "Agile Software Development: Clean Coding Practices",
-        "Agile Software Development: Pair and Mob Programming",
-        "Agile at Work: Building Your Agile Team",
-        "Agile at Work: Driving Productive Agile Meetings",
-        "Agile at Work: Getting Better with Agile Retrospectives",
-        "Cert Prep: Scrum Master",
-        "Master Agile Software Development",
+        "Agile Development Practices: LinkedIn",
+        "Agile Foundations: LinkedIn",
+        "Agile Project Management with Microsoft Project: LinkedIn",
+        "Agile Requirements Foundations: NASBA",
+        "Agile Software Development: Clean Coding Practices: LinkedIn",
+        "Agile Software Development: Pair and Mob Programming: LinkedIn",
+        "Agile at Work: Building Your Agile Team: LinkedIn",
+        "Agile at Work: Driving Productive Agile Meetings: LinkedIn",
+        "Agile at Work: Getting Better with Agile Retrospectives: LinkedIn",
+        "Cert Prep: Scrum Master: LinkedIn",
+        "Master Agile Software Development: LinkedIn",
       ],
     },
     {
       title: "Lean Technology Strategy",
       items: [
-        "Lean Technology Strategy: Building High-Performing Teams",
-        "Lean Technology Strategy: Moving Fast With Defined Constraints",
-        "Lean Technology Strategy: Running Agile at Scale",
-        "Lean Technology Strategy: Starting Your Business Transformation",
+        "Lean Technology Strategy: Building High-Performing Teams: LinkedIn",
+        "Lean Technology Strategy: Moving Fast With Defined Constraints: LinkedIn",
+        "Lean Technology Strategy: Running Agile at Scale: LinkedIn",
+        "Lean Technology Strategy: Starting Your Business Transformation: LinkedIn",
       ],
     },
     {
-      title: "Jira / Atlassian",
+      title: "Jira/Atlassian (badges)",
       items: [
-        "Basic Reporting in Jira Badge",
-        "Jira Fundamentals Badge",
-        "Jira Service Management Fundamentals Badge",
+        "Basic Reporting in Jira Badge: Atlassian",
+        "Jira Fundamentals Badge: Atlassian",
+        "Jira Service Management Fundamentals Badge: Atlassian",
       ],
     },
     {
       title: "DevOps",
-      items: ["DevOps Foundations"],
+      items: ["DevOps Foundations: LinkedIn"],
     },
     {
       title: "AI for Project Management",
-      items: ["AI for Project Management: Managing Risk with Generative AI"],
+      items: ["AI for Project Management: Managing Risk with Generative AI: LinkedIn"],
     },
     {
-      title: "Development, Analysis and Management Tools",
+      title: "Development, Analysis and Management tools",
       items: [
-        "ClickUp Admin Certificate of Completion",
-        "Power BI Essential Training",
-        "Salesforce esencial",
-        "Tableau esencial",
+        "ClickUp Admin Certificate of Completion: ClickUp",
+        "Power BI Essential Training: NASBA",
+        "Salesforce Essentials: LinkedIn",
+        "Tableau Essentials: LinkedIn",
       ],
     },
   ];
@@ -242,7 +242,7 @@ export default function Portfolio() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-left"
         >
-          <h2 className="text-xl md:text-3xl font-semibold mb-6 text-center">
+          <h2 className="text-xl md:text-3xl font-semibold mb-4">
             {texts.studies.title}
           </h2>
 
