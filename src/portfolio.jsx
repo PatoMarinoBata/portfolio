@@ -227,52 +227,52 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* ======================
-          4) ESTUDIOS Y CERTIFICACIONES
-      ====================== */}
-      <section
-        id="studies"
-        className="snap-start pt-24 pb-16 bg-gray-900 px-4 md:px-10"
-      >
-        <motion.div
-          variants={fadeVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-left"
-        >
-          <h2 className="text-xl md:text-3xl font-semibold mb-4">
-            {texts.studies.title}
-          </h2>
+{/* ======================
+    4) ESTUDIOS Y CERTIFICACIONES
+====================== */}
+<section
+  id="studies"
+  className="snap-start pt-24 pb-16 bg-gray-900 px-4 md:px-10"
+>
+  <motion.div
+    variants={fadeVariant}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.6 }}
+    className="max-w-3xl mx-auto text-left"
+  >
+    <h2 className="text-xl md:text-3xl font-semibold mb-4">
+      {texts.studies.title}
+    </h2>
 
-          {/* Cada categoría de certificación con + para expandir */}
-          <div className="space-y-6">
-            {certifications.map((cert, idx) => (
-              <div key={idx} className="border-b border-gray-700 pb-4">
-                <div className="flex justify-between items-center">
-                  <div className="text-base md:text-lg font-semibold">
-                    {cert.title}
-                  </div>
-                  <button
-                    onClick={() => toggleCert(idx)}
-                    className="text-xl md:text-2xl font-bold text-blue-400 hover:text-blue-300 transition"
-                  >
-                    {openCertIndex === idx ? "−" : "+"}
-                  </button>
-                </div>
-                {openCertIndex === idx && (
-                  <ul className="mt-2 list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-1">
-                    {cert.items.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
+    <div className="space-y-6">
+      {texts.studies.items.map((group, idx) => (
+        <div key={idx} className="border-b border-gray-700 pb-4">
+          <div className="flex justify-between items-center">
+            <h3 className="text-base md:text-lg font-semibold">
+              {group.title}
+            </h3>
+            <button
+              onClick={() => toggleDescription(idx)}
+              className="text-xl md:text-2xl font-bold text-blue-400 hover:text-blue-300 transition"
+            >
+              {openIndex === idx ? "−" : "+"}
+            </button>
           </div>
-        </motion.div>
-      </section>
+          {openIndex === idx && (
+            <ul className="mt-2 list-disc list-inside text-sm md:text-base text-gray-300 space-y-1">
+              {group.items.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+  </motion.div>
+</section>
+
 
       {/* ======================
           5) CONTACTO
