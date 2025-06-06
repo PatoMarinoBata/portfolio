@@ -166,7 +166,7 @@ export const defaultTexts = {
     studies: {
       title: "Studies & Certifications",
       items: [
-        "⚡ Bachelor in Information Systems – UTN FRD (90 % completed; expected graduation: June 2026)",
+        "⚡ Bachelor’s Degree in Information Systems Engineering / Computer Science – UTN FRD (90 % completed; expected graduation: June 2026)",
         "Scrum Master / Agile Methodologies",
         "Certifications in Jira, Power BI, DevOps",
       ],
