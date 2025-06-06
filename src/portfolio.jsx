@@ -15,7 +15,6 @@ export default function Portfolio() {
   const [openJobIndex, setOpenJobIndex] = useState(null);
   const [openCertIndex, setOpenCertIndex] = useState(null);
 
-  // Carousel auto-advance every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
@@ -23,7 +22,6 @@ export default function Portfolio() {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  // Show loading state until all required text fields are defined
   if (
     !texts?.home?.title ||
     !texts?.about?.title ||
@@ -44,13 +42,12 @@ export default function Portfolio() {
     setOpenCertIndex((prev) => (prev === index ? null : index));
   };
 
-  // Fade-in animation variant for sections
   const fadeVariant = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
 
-  // Certifications data (DevOps and AI items have been merged into last category)
+  // Datos de certificaciones organizados por categoría (DevOps y AI movidos al último bloque)
   const certifications = [
     {
       title: "Agile Project Management",
@@ -89,10 +86,12 @@ export default function Portfolio() {
       title: "Development, Analysis and Management Tools",
       items: [
         "ClickUp Admin Certificate of Completion",
-        "Power BI Essentials",
-        "Salesforce Essentials",
-        "Tableau Essentials",
+        "Power BI Essential Training",
+        "Salesforce esencial",
+        "Tableau esencial",
+        // Items moved from DevOps:
         "DevOps Foundations",
+        // Items moved from AI for Project Management:
         "AI for Project Management: Managing Risk with Generative AI",
       ],
     },
@@ -239,11 +238,17 @@ export default function Portfolio() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-left"
         >
-          <h2 className="text-xl md:text-3xl font-semibold mb-4">
+          <h2 className="text-xl md:text-3xl font-semibold mb-6 text-center">
             {texts.studies.title}
           </h2>
 
-          {/* Each certification category with expand/collapse */}
+          {/* CARRERA DESTACADA */}
+          <div className="bg-blue-900 text-white p-4 rounded-lg shadow-md mb-6 border-l-4 border-blue-400">
+            ⚡ <strong>Ingeniería en Sistemas de Información</strong> – UTN FRD<br />
+            90% completado · Graduación estimada: junio 2026
+          </div>
+
+          {/* CERTIFICACIONES POR CATEGORÍA */}
           <div className="space-y-6">
             {certifications.map((cert, idx) => (
               <div key={idx} className="border-b border-gray-700 pb-4">
