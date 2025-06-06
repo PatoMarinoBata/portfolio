@@ -223,7 +223,7 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-     {/* ======================
+{/* ======================
     4) ESTUDIOS Y CERTIFICACIONES
 ====================== */}
 <section
@@ -238,16 +238,18 @@ export default function Portfolio() {
     transition={{ duration: 0.6 }}
     className="max-w-3xl mx-auto text-left"
   >
-    <h2 className="text-xl md:text-3xl font-semibold mb-4">
+    <h2 className="text-xl md:text-3xl font-semibold mb-6">
       {texts.studies.title}
     </h2>
 
-    {/* Título universitario destacado */}
-    <p className="mb-6 text-sm md:text-base lg:text-lg text-yellow-300 font-medium">
-      ⚡ {texts.studies.items[0]}
-    </p>
+    {/* Banner destacado de la carrera */}
+    <div className="bg-blue-500/30 border border-blue-400 rounded-lg p-4 mb-6 text-white">
+      <p className="text-sm md:text-base font-medium leading-relaxed">
+        {texts.studies.items[0]}
+      </p>
+    </div>
 
-    {/* Certificaciones agrupadas */}
+    {/* Acordeón de certificaciones */}
     <div className="space-y-6">
       {certifications.map((cert, idx) => (
         <div key={idx} className="border-b border-gray-700 pb-4">
