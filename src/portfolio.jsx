@@ -223,7 +223,7 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-{/* ======================
+ {/* ======================
     4) ESTUDIOS Y CERTIFICACIONES
 ====================== */}
 <section
