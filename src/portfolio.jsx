@@ -12,7 +12,8 @@ export default function Portfolio() {
     "/images/about/foto3.jpg",
   ];
   const [current, setCurrent] = useState(0);
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openJobIndex, setOpenJobIndex] = useState(null);
+  const [openCertIndex, setOpenCertIndex] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,14 +34,72 @@ export default function Portfolio() {
     return <div className="text-white p-10">Cargando contenido...</div>;
   }
 
-  const toggleDescription = (index) => {
-    setOpenIndex((prev) => (prev === index ? null : index));
+  const toggleJobDescription = (index) => {
+    setOpenJobIndex((prev) => (prev === index ? null : index));
+  };
+
+  const toggleCert = (index) => {
+    setOpenCertIndex((prev) => (prev === index ? null : index));
   };
 
   const fadeVariant = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+
+  // Datos de certificaciones organizados por categoría
+  const certifications = [
+    {
+      title: "Agile Project Management",
+      items: [
+        "Agile Development Practices: LinkedIn",
+        "Agile Foundations: LinkedIn",
+        "Agile Project Management with Microsoft Project: LinkedIn",
+        "Agile Requirements Foundations: NASBA",
+        "Agile Software Development: Clean Coding Practices: LinkedIn",
+        "Agile Software Development: Pair and Mob Programming: LinkedIn",
+        "Agile at Work: Building Your Agile Team: LinkedIn",
+        "Agile at Work: Driving Productive Agile Meetings: LinkedIn",
+        "Agile at Work: Getting Better with Agile Retrospectives: LinkedIn",
+        "Cert Prep: Scrum Master: LinkedIn",
+        "Master Agile Software Development: LinkedIn",
+      ],
+    },
+    {
+      title: "Lean Technology Strategy",
+      items: [
+        "Lean Technology Strategy: Building High-Performing Teams: LinkedIn",
+        "Lean Technology Strategy: Moving Fast With Defined Constraints: LinkedIn",
+        "Lean Technology Strategy: Running Agile at Scale: LinkedIn",
+        "Lean Technology Strategy: Starting Your Business Transformation: LinkedIn",
+      ],
+    },
+    {
+      title: "Jira/Atlassian (badges)",
+      items: [
+        "Basic Reporting in Jira Badge: Atlassian",
+        "Jira Fundamentals Badge: Atlassian",
+        "Jira Service Management Fundamentals Badge: Atlassian",
+      ],
+    },
+    {
+      title: "DevOps",
+      items: ["DevOps Foundations: LinkedIn"],
+    },
+    {
+      title: "AI for Project Management",
+      items: ["AI for Project Management: Managing Risk with Generative AI: LinkedIn"],
+    },
+    {
+      title: "Development, Analysis and Management tools",
+      items: [
+        "ClickUp Admin Certificate of Completion: ClickUp",
+        "Power BI Essential Training: NASBA",
+        "Salesforce esencial: LinkedIn",
+        "Tableau esencial: LinkedIn",
+      ],
+    },
+  ];
 
   return (
     <div className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory bg-black text-white">
@@ -148,16 +207,16 @@ export default function Portfolio() {
                     )}
                   </div>
                   <button
-                    onClick={() => toggleDescription(idx)}
+                    onClick={() => toggleJobDescription(idx)}
                     className="text-xl md:text-2xl font-bold text-blue-400 hover:text-blue-300 transition"
                   >
-                    {openIndex === idx ? "−" : "+"}
+                    {openJobIndex === idx ? "−" : "+"}
                   </button>
                 </div>
                 <p className="mt-1 text-sm md:text-base text-gray-300">
                   {job.company}
                 </p>
-                {openIndex === idx && (
+                {openJobIndex === idx && (
                   <p className="mt-2 text-sm md:text-base text-gray-300 whitespace-pre-line">
                     {job.description}
                   </p>
@@ -186,38 +245,32 @@ export default function Portfolio() {
           <h2 className="text-xl md:text-3xl font-semibold mb-4">
             {texts.studies.title}
           </h2>
-          <ul className="list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-2">
-            <li>
-              <strong>React: De cero a experto (Hooks y MERN)</strong> – Udemy
-            </li>
-            <li>
-              <strong>JavaScript Moderno: Guía Completa</strong> – Udemy
-            </li>
-            <li>
-              <strong>Curso Profesional de Git y GitHub</strong> – Platzi
-            </li>
-            <li>
-              <strong>Node.js: De cero a experto</strong> – Udemy
-            </li>
-            <li>
-              <strong>Diseño de Interfaces con Figma</strong> – Coursera
-            </li>
-            <li>
-              <strong>TypeScript: Tu completa guía</strong> – Udemy
-            </li>
-            <li>
-              <strong>Next.js: Desarrollo de aplicaciones web</strong> – Platzi
-            </li>
-            <li>
-              <strong>Introducción a la Ciencia de Datos</strong> – Coursera
-            </li>
-            <li>
-              <strong>Scrum: Fundamentos y Aplicaciones</strong> – LinkedIn Learning
-            </li>
-            <li>
-              <strong>Desarrollo de APIs RESTful con Express</strong> – Udemy
-            </li>
-          </ul>
+
+          {/* Cada categoría de certificación con + para expandir */}
+          <div className="space-y-6">
+            {certifications.map((cert, idx) => (
+              <div key={idx} className="border-b border-gray-700 pb-4">
+                <div className="flex justify-between items-center">
+                  <div className="text-base md:text-lg font-semibold">
+                    {cert.title}
+                  </div>
+                  <button
+                    onClick={() => toggleCert(idx)}
+                    className="text-xl md:text-2xl font-bold text-blue-400 hover:text-blue-300 transition"
+                  >
+                    {openCertIndex === idx ? "−" : "+"}
+                  </button>
+                </div>
+                {openCertIndex === idx && (
+                  <ul className="mt-2 list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-1">
+                    {cert.items.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
         </motion.div>
       </section>
 
