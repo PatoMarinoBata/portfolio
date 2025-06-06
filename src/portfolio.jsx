@@ -46,7 +46,9 @@ export default function Portfolio() {
     <div className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory bg-black text-white">
       <Navbar />
 
-      {/* HOME */}
+      {/* ======================
+          1) HOME
+      ====================== */}
       <section
         id="home"
         className="snap-start min-h-screen pt-24 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 px-4 text-center"
@@ -68,7 +70,9 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* SOBRE MÍ */}
+      {/* ======================
+          2) SOBRE MÍ (carrusel)
+      ====================== */}
       <section
         id="about"
         className="snap-start pt-24 min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
@@ -112,7 +116,9 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* EXPERIENCIA */}
+      {/* ======================
+          3) EXPERIENCIA
+      ====================== */}
       <section
         id="experience"
         className="snap-start pt-24 bg-gray-950 px-4 md:px-10 pb-12"
@@ -162,7 +168,9 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* ESTUDIOS */}
+      {/* ======================
+          4) ESTUDIOS Y CERTIFICACIONES
+      ====================== */}
       <section
         id="studies"
         className="snap-start pt-24 pb-16 bg-gray-900 px-4 md:px-10"
@@ -179,14 +187,43 @@ export default function Portfolio() {
             {texts.studies.title}
           </h2>
           <ul className="list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-2">
-            {texts.studies.items.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
+            <li>
+              <strong>React: De cero a experto (Hooks y MERN)</strong> – Udemy
+            </li>
+            <li>
+              <strong>JavaScript Moderno: Guía Completa</strong> – Udemy
+            </li>
+            <li>
+              <strong>Curso Profesional de Git y GitHub</strong> – Platzi
+            </li>
+            <li>
+              <strong>Node.js: De cero a experto</strong> – Udemy
+            </li>
+            <li>
+              <strong>Diseño de Interfaces con Figma</strong> – Coursera
+            </li>
+            <li>
+              <strong>TypeScript: Tu completa guía</strong> – Udemy
+            </li>
+            <li>
+              <strong>Next.js: Desarrollo de aplicaciones web</strong> – Platzi
+            </li>
+            <li>
+              <strong>Introducción a la Ciencia de Datos</strong> – Coursera
+            </li>
+            <li>
+              <strong>Scrum: Fundamentos y Aplicaciones</strong> – LinkedIn Learning
+            </li>
+            <li>
+              <strong>Desarrollo de APIs RESTful con Express</strong> – Udemy
+            </li>
           </ul>
         </motion.div>
       </section>
 
-      {/* CONTACTO */}
+      {/* ======================
+          5) CONTACTO
+      ====================== */}
       <section
         id="contact"
         className="snap-start pt-24 pb-24 flex flex-col justify-center items-center bg-gray-950 px-4 md:px-10 text-center"
