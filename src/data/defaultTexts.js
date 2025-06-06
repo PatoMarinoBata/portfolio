@@ -2,7 +2,7 @@ export const defaultTexts = {
   es: {
     home: {
       title: "Patricio Marino Bata",
-      subtitle: "Senior Project Manager especializado en IT y Blockchain",
+      subtitle: "Senior Project Manager / Analista en Sistemas",
     },
     about: {
       title: "Sobre mí",
@@ -73,7 +73,7 @@ export const defaultTexts = {
     studies: {
       title: "Estudios y Certificaciones",
       items: [
-        "Ingeniería en Sistemas de Información (90% completado)",
+        "Ingeniería en Sistemas de Información – UTN FRD (90 % completado; graduación estimada: junio 2026)",
         "Scrum Master / Metodologías Ágiles",
         "Certificaciones en Jira, Power BI, DevOps",
       ],
@@ -95,7 +95,7 @@ export const defaultTexts = {
   en: {
     home: {
       title: "Patricio Marino Bata",
-      subtitle: "Senior Project Manager specialized in IT and Blockchain",
+      subtitle: "Senior Project Manager / Systems Analyst",
     },
     about: {
       title: "About Me",
@@ -166,7 +166,7 @@ export const defaultTexts = {
     studies: {
       title: "Studies & Certifications",
       items: [
-        "Bachelor in Information Systems (90% completed)",
+        "Bachelor in Information Systems – UTN FRD (90 % completed; expected graduation: June 2026)",
         "Scrum Master / Agile Methodologies",
         "Certifications in Jira, Power BI, DevOps",
       ],
