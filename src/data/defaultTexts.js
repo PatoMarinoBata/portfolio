@@ -1,209 +1,313 @@
-export const defaultTexts = {
-  es: {
-    // === NAVBAR ===
-    navbar: {
-      home: "Inicio",
-      about: "Sobre mí",
-      experience: "Experiencia",
-      studies: "Estudios",
-      contact: "Contacto"
-    },
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Navbar from "./Navbar.jsx";
+import { useLanguage } from "./LanguageContext";
 
-    // === HOME ===
-    home: {
-      title: "Patricio Marino Bata",
-      subtitle: "Senior Project Manager especializado en IT y Blockchain"
-    },
+export default function Portfolio() {
+  const { texts, language } = useLanguage();
 
-    // === SOBRE MÍ ===
-    about: {
-      title: "Sobre mí",
-      description:
-        "Soy un Senior Project Manager con experiencia previa como Fullstack Developer, Analista Funcional y Coordinador de Proyectos. Me apasiona liderar iniciativas tecnológicas donde mi trabajo tenga impacto real. Me especializo en equipos ágiles, comunicación clara y soluciones prácticas."
-    },
+  const images = [
+    "/images/about/foto1.jpeg",
+    "/images/about/foto2.jpeg",
+    "/images/about/foto3.jpg",
+  ];
+  const [current, setCurrent] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
 
-    // === ESTUDIOS ===
-    studies: {
-      title: "Estudios y Certificaciones",
-      items: [
-        "Lic. en Sistemas de Información (90% completado)",
-        "Scrum Master / Agile Methodologies",
-        "Certificaciones en Jira, Power BI, DevOps"
-      ]
-    },
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
-    // === CONTACTO ===
-    contact: {
-      title: "Contacto",
-      text: "Podés contactarme a través de",
-      cv: "Descargar CV"
-    },
-
-    // === EXPERIENCIA ===
-    experience: {
-      title: "Experiencia Laboral",
-      jobs: [
-        {
-          role: "SR Project Manager",
-          company: "SCALEMOTE IT",
-          dates: "02/2025 - 06/2025",
-          description:
-            "Trabajé como SR Project Manager en SCALEMOTE IT, una software factory australiana especializada en proyectos de Blockchain."
-        },
-        {
-          role: "IT Project Manager",
-          company: "WERDEN IT",
-          dates: "08/2024 - 11/2024",
-          description:
-            "Me desempeñé como Project Manager en una empresa nacional de soluciones tecnológicas. Tuve también responsabilidades de Product Owner y Analista Funcional. Algunas tareas clave incluyeron seguimiento de proyectos de software, creación de roadmaps, estimaciones de tiempos, definiciones de producto con clientes y presentaciones a stakeholders."
-        },
-        {
-          role: "Project Analyst",
-          company: "HANSEN Technologies",
-          dates: "01/2024 - 03/2024",
-          description:
-            "Trabajé como Project Analyst en una empresa internacional de billing. Posición completamente en inglés, con foco en análisis y optimización de proyectos. Utilicé herramientas de Atlassian y propias para automatizar procesos, mejorar flujos de trabajo y generar documentos para stakeholders."
-        },
-        {
-          role: "Project Administrator",
-          company: "PwC Acceleration Center Argentina",
-          dates: "06/2023 - 01/2024",
-          description:
-            "Me desempeñé como Project Administrator/Coordinator con tareas como control de documentación, análisis de datos, optimización de procesos y plantillas, y contacto directo con Project Managers y stakeholders."
-        },
-        {
-          role: "Project Manager",
-          company: "Correo Argentino",
-          dates: "01/2023 - 04/2023",
-          description:
-            "Fui promovido a Project Manager luego de ser Delivery Manager. Me encargué de estudios de viabilidad, análisis técnico-funcional, presentación de proyectos a stakeholders y estimación de requerimientos presupuestarios."
-        },
-        {
-          role: "Analista Funcional / Delivery Manager",
-          company: "Correo Argentino",
-          dates: "10/2022 - 01/2023",
-          description:
-            "Trabajé en Gestión de la Demanda. Me encargué de seguimiento de historias de usuario, informes en Jira/Confluence y gestión de proyectos con metodologías ágiles."
-        },
-        {
-          role: "Analista Funcional",
-          company: "OSPe",
-          dates: "02/2022 - 05/2022",
-          description:
-            "Participé en análisis y relevamiento de requerimientos de usuario. Coordiné reuniones con usuarios y desarrolladores. Realicé testing funcional y prototipado de interfaces."
-        },
-        {
-          role: "Fullstack Developer / Analista Funcional",
-          company: "Freelance",
-          dates: "05/2021 - 10/2021",
-          description:
-            "Desarrollé aplicaciones para PyMEs. También realicé documentación, prototipado, diagramas de casos de uso, seguimiento con clientes y testing funcional."
-        }
-      ]
-    }
-  },
-
-  en: {
-    // === NAVBAR ===
-    navbar: {
-      home: "Home",
-      about: "About Me",
-      experience: "Experience",
-      studies: "Studies",
-      contact: "Contact"
-    },
-
-    // === HOME ===
-    home: {
-      title: "Patricio Marino Bata",
-      subtitle: "Senior Project Manager specialized in IT and Blockchain"
-    },
-
-    // === ABOUT ===
-    about: {
-      title: "About Me",
-      description:
-        "I’m a Senior Project Manager with previous experience as a Fullstack Developer, Business Analyst, and Project Coordinator. I’m passionate about leading tech projects where my impact is visible. I specialize in agile teams, clear communication, and practical solutions."
-    },
-
-    // === STUDIES ===
-    studies: {
-      title: "Education and Certifications",
-      items: [
-        "Bachelor in Information Systems (90% completed)",
-        "Scrum Master / Agile Methodologies",
-        "Certifications in Jira, Power BI, DevOps"
-      ]
-    },
-
-    // === CONTACT ===
-    contact: {
-      title: "Contact",
-      text: "You can reach me through",
-      cv: "Download CV"
-    },
-
-    // === EXPERIENCE ===
-    experience: {
-      title: "Work Experience",
-      jobs: [
-        {
-          role: "SR Project Manager",
-          company: "SCALEMOTE IT",
-          dates: "02/2025 - 06/2025",
-          description:
-            "I worked as a Senior Project Manager at SCALEMOTE IT, an Australian software factory focused on Blockchain projects."
-        },
-        {
-          role: "IT Project Manager",
-          company: "WERDEN IT",
-          dates: "08/2024 - 11/2024",
-          description:
-            "I managed software projects and also acted as a Product Owner and Functional Analyst. Key tasks included roadmap creation, time estimation, product definition, and stakeholder presentations."
-        },
-        {
-          role: "Project Analyst",
-          company: "HANSEN Technologies",
-          dates: "01/2024 - 03/2024",
-          description:
-            "Worked entirely in English as a Project Analyst. Led workflow optimization, document automation, template design, and daily presentations for stakeholders."
-        },
-        {
-          role: "Project Administrator",
-          company: "PwC Acceleration Center Argentina",
-          dates: "06/2023 - 01/2024",
-          description:
-            "Performed document control, data analysis, process improvement, template management, and coordination with Project Managers and stakeholders."
-        },
-        {
-          role: "Project Manager",
-          company: "Correo Argentino",
-          dates: "01/2023 - 04/2023",
-          description:
-            "Promoted to Project Manager after being Delivery Manager. Led feasibility studies, technical and functional analysis, stakeholder presentations, and budget requirement analysis."
-        },
-        {
-          role: "Functional Analyst / Delivery Manager",
-          company: "Correo Argentino",
-          dates: "10/2022 - 01/2023",
-          description:
-            "Worked on project tracking, user story follow-up, Jira/Confluence reports, and agile project coordination."
-        },
-        {
-          role: "Functional Analyst",
-          company: "OSPe",
-          dates: "02/2022 - 05/2022",
-          description:
-            "Conducted user requirement analysis, prototyping, testing, and agile team collaboration with users and developers."
-        },
-        {
-          role: "Fullstack Developer / Business Analyst",
-          company: "Freelance",
-          dates: "05/2021 - 10/2021",
-          description:
-            "Developed applications for SMEs, wrote documentation, designed interfaces and use case diagrams, and conducted client demos and testing."
-        }
-      ]
-    }
+  if (
+    !texts?.home?.title ||
+    !texts?.about?.title ||
+    !texts?.experience?.title ||
+    !Array.isArray(texts.experience.jobs) ||
+    !texts?.studies?.title ||
+    !Array.isArray(texts.studies?.items) ||
+    !texts?.contact?.title
+  ) {
+    return <div className="text-white p-10">Cargando contenido...</div>;
   }
-};
+
+  const toggleDescription = (index) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
+
+  const fadeVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <div className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory bg-black text-white">
+      <Navbar />
+
+      {/* ======================
+          1) HOME
+      ====================== */}
+      <section
+        id="home"
+        className="snap-start min-h-screen pt-24 flex flex-col justify-center items-center bg-gradient-to-b from-black to-gray-900 px-4 text-center"
+      >
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="w-full"
+        >
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">
+            {texts.home.title}
+          </h1>
+          <p className="mt-4 text-base md:text-lg lg:text-xl text-gray-300 max-w-xl mx-auto">
+            {texts.home.subtitle}
+          </p>
+        </motion.div>
+      </section>
+
+      {/* ======================
+          2) SOBRE MÍ (carrusel)
+      ====================== */}
+      <section
+        id="about"
+        className="snap-start pt-24 min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 md:px-10 gap-10"
+      >
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="w-full md:w-1/2 flex justify-center items-center overflow-hidden relative h-[250px] md:h-[350px] lg:h-[400px]"
+        >
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={current}
+              src={images[current]}
+              alt={`Foto ${current + 1}`}
+              initial={{ x: 300, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -300, opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-[90%] max-h-full object-cover rounded-2xl shadow-xl absolute"
+            />
+          </AnimatePresence>
+        </motion.div>
+
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-10 text-center md:text-left"
+        >
+          <h2 className="text-xl md:text-3xl font-semibold mb-4">
+            {texts.about.title}
+          </h2>
+          <p className="text-sm md:text-base lg:text-lg text-gray-300">
+            {texts.about.description}
+          </p>
+        </motion.div>
+      </section>
+
+      {/* ======================
+          3) EXPERIENCIA
+      ====================== */}
+      <section
+        id="experience"
+        className="snap-start pt-24 bg-gray-950 px-4 md:px-10 pb-12"
+      >
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto"
+        >
+          <h2 className="text-xl md:text-3xl font-semibold mb-6 text-center">
+            {texts.experience.title}
+          </h2>
+
+          <div className="space-y-6">
+            {texts.experience.jobs.map((job, idx) => (
+              <div key={idx} className="border-b border-gray-700 pb-4">
+                <div className="flex justify-between items-center">
+                  <div className="text-base md:text-lg font-semibold">
+                    <span>{job.role}</span>
+                    {job.dates && (
+                      <span className="ml-2 text-xs md:text-sm text-gray-400 italic">
+                        {job.dates}
+                      </span>
+                    )}
+                  </div>
+                  <button
+                    onClick={() => toggleDescription(idx)}
+                    className="text-xl md:text-2xl font-bold text-blue-400 hover:text-blue-300 transition"
+                  >
+                    {openIndex === idx ? "−" : "+"}
+                  </button>
+                </div>
+                <p className="mt-1 text-sm md:text-base text-gray-300">
+                  {job.company}
+                </p>
+                {openIndex === idx && (
+                  <p className="mt-2 text-sm md:text-base text-gray-300 whitespace-pre-line">
+                    {job.description}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ======================
+          4) ESTUDIOS Y CERTIFICACIONES
+      ====================== */}
+      <section
+        id="studies"
+        className="snap-start pt-24 pb-16 bg-gray-900 px-4 md:px-10"
+      >
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-left"
+        >
+          <h2 className="text-xl md:text-3xl font-semibold mb-6 text-center">
+            {texts.studies.title}
+          </h2>
+
+          {[
+            {
+              title: "Agile Project Management",
+              items: [
+                "Agile Development Practices",
+                "Agile Foundations",
+                "Agile Project Management with Microsoft Project",
+                "Agile Requirements Foundations",
+                "Agile Software Development: Clean Coding Practices",
+                "Agile Software Development: Pair and Mob Programming",
+                "Agile at Work: Building Your Agile Team",
+                "Agile at Work: Driving Productive Agile Meetings",
+                "Agile at Work: Getting Better with Agile Retrospectives",
+                "Cert Prep: Scrum Master",
+                "Master Agile Software Development",
+              ],
+            },
+            {
+              title: "Lean Technology Strategy",
+              items: [
+                "Lean Technology Strategy: Building High-Performing Teams",
+                "Lean Technology Strategy: Moving Fast With Defined Constraints",
+                "Lean Technology Strategy: Running Agile at Scale",
+                "Lean Technology Strategy: Starting Your Business Transformation",
+              ],
+            },
+            {
+              title: "Jira / Atlassian",
+              items: [
+                "Basic Reporting in Jira Badge",
+                "Jira Fundamentals Badge",
+                "Jira Service Management Fundamentals Badge",
+              ],
+            },
+            {
+              title: "DevOps",
+              items: ["DevOps Foundations"],
+            },
+            {
+              title: "AI for Project Management",
+              items: [
+                "AI for Project Management: Managing Risk with Generative AI",
+              ],
+            },
+            {
+              title: "Development, Analysis and Management Tools",
+              items: [
+                "ClickUp Admin Certificate of Completion",
+                "Power BI Essential Training",
+                "Salesforce esencial",
+                "Tableau esencial",
+              ],
+            },
+          ].map((category, idx) => (
+            <div key={idx} className="border-b border-gray-700 pb-4 mb-4">
+              <div className="flex justify-between items-center">
+                <h3 className="text-base md:text-lg font-semibold">
+                  {category.title}
+                </h3>
+                <button
+                  onClick={() => toggleDescription(idx)}
+                  className="text-xl font-bold text-blue-400 hover:text-blue-300 transition"
+                >
+                  {openIndex === idx ? "−" : "+"}
+                </button>
+              </div>
+              {openIndex === idx && (
+                <ul className="mt-2 list-disc list-inside text-sm md:text-base text-gray-300 space-y-1">
+                  {category.items.map((item, subIdx) => (
+                    <li key={subIdx}>{item}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* ======================
+          5) CONTACTO
+      ====================== */}
+      <section
+        id="contact"
+        className="snap-start pt-24 pb-24 flex flex-col justify-center items-center bg-gray-950 px-4 md:px-10 text-center"
+      >
+        <motion.div
+          variants={fadeVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="w-full max-w-md mx-auto"
+        >
+          <h2 className="text-xl md:text-3xl font-semibold mb-4">
+            {texts.contact.title}
+          </h2>
+          <p className="mb-4 text-sm md:text-base lg:text-lg">
+            {texts.contact.text}{" "}
+            <a
+              href="https://www.linkedin.com/in/patricio-marino/"
+              className="text-blue-400 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+            .
+          </p>
+          <a
+            href={
+              language === "es"
+                ? "/CV_PatricioMarino_ES.pdf"
+                : "/CV_PatricioMarino_EN.pdf"
+            }
+            download
+            className="bg-white text-black px-4 py-2 rounded hover:bg-gray-300 transition text-sm md:text-base"
+          >
+            {language === "es" ? "Descargar CV" : "Download CV"}
+          </a>
+        </motion.div>
+      </section>
+    </div>
+  );
+}
