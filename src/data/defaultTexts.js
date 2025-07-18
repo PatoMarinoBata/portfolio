@@ -21,7 +21,7 @@ export const defaultTexts = {
         },
         {
           role: "IT Project Manager",
-          company: "WERDEN IT",
+          company: "Bigger",
           dates: "08/2024 - 11/2024",
           description:
             "Me desempeñé como Project Manager en una empresa nacional de soluciones tecnológicas. Tuve también responsabilidades de Product Owner y Analista Funcional. Algunas tareas clave incluyeron seguimiento de proyectos de software, creación de roadmaps, estimaciones de tiempos, definiciones de producto con clientes y presentaciones a stakeholders.",
@@ -107,7 +107,7 @@ export const defaultTexts = {
       jobs: [
         {
           role: "SR Project Manager",
-          company: "SCALEMOTE IT",
+          company: "Bigger",
           dates: "02/2025 - 06/2025",
           description:
             "I worked as a Senior Project Manager at SCALEMOTE IT, an Australian software factory focused on Blockchain projects.",

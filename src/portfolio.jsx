@@ -94,6 +94,7 @@ export default function Portfolio() {
         "Tableau Essentials",
         "DevOps Foundations",
         "AI for Project Management: Managing Risk with Generative AI",
+        "Zapier",
       ],
     },
   ];
