@@ -14,14 +14,14 @@ export const defaultTexts = {
       jobs: [
         {
           role: "SR Project Manager",
-          company: "SCALEMOTE IT",
+          company: "Scalemote / BIGGER",
           dates: "02/2025 - 06/2025",
           description:
-            "Trabajé como SR Project Manager en SCALEMOTE IT, una software factory australiana especializada en proyectos de Blockchain.",
+            "Trabajé como SR Project Manager en Scalemote / BIGGER, una software factory australiana especializada en proyectos de Blockchain.",
         },
         {
           role: "IT Project Manager",
-          company: "Bigger",
+          company: "Werden / IT Rock",
           dates: "08/2024 - 11/2024",
           description:
             "Me desempeñé como Project Manager en una empresa nacional de soluciones tecnológicas. Tuve también responsabilidades de Product Owner y Analista Funcional. Algunas tareas clave incluyeron seguimiento de proyectos de software, creación de roadmaps, estimaciones de tiempos, definiciones de producto con clientes y presentaciones a stakeholders.",
@@ -73,7 +73,7 @@ export const defaultTexts = {
     studies: {
       title: "Estudios y Certificaciones",
       items: [
-        "⚡ Ingeniería en Sistemas de Información – UTN FRD (90 % completado, con una graduación estimada para junio de 2026)",
+        "⚡ Ingeniería en Sistemas de Información – UTN FRD (90 % completado; graduación estimada: junio 2026)",
         "Scrum Master / Metodologías Ágiles",
         "Certificaciones en Jira, Power BI, DevOps",
       ],
@@ -107,14 +107,14 @@ export const defaultTexts = {
       jobs: [
         {
           role: "SR Project Manager",
-          company: "Bigger",
+          company: "Scalemote / BIGGER",
           dates: "02/2025 - 06/2025",
           description:
-            "I worked as a Senior Project Manager at SCALEMOTE IT, an Australian software factory focused on Blockchain projects.",
+            "I worked as a Senior Project Manager at Scalemote / BIGGER, an Australian software factory focused on Blockchain projects.",
         },
         {
           role: "IT Project Manager",
-          company: "WERDEN IT",
+          company: "Werden / IT Rock",
           dates: "08/2024 - 11/2024",
           description:
             "I managed software projects and also acted as a Product Owner and Functional Analyst. Key tasks included roadmap creation, time estimation, product definition, and stakeholder presentations.",
@@ -166,7 +166,7 @@ export const defaultTexts = {
     studies: {
       title: "Studies & Certifications",
       items: [
-        "⚡ Bachelor’s Degree in Information Systems Engineering / Computer Science – UTN FRD (90 % completed, with an expected graduation date of June 2026)",
+        "⚡ Bachelor in Information Systems – UTN FRD (90 % completed; expected graduation: June 2026)",
         "Scrum Master / Agile Methodologies",
         "Certifications in Jira, Power BI, DevOps",
       ],
