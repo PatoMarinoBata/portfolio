@@ -8,7 +8,7 @@ export const defaultTexts = {
     about: {
       title: "Sobre mí",
       description:
-        "Soy Senior Project Manager con experiencia previa como Fullstack Developer, Analista Funcional y Coordinador de Proyectos. Me especializá liderar equipos y proyectos tecnológicos donde mi trabajo tenga impacto real. Tengo un enfoque muy práctico, orientado a la comunicación clara, metodologías ágiles y la mejora continua. Me interesa especialmente trabajar en entornos donde la organización, el análisis y la coordinación sean claves para el éxito.",
+        "Soy un Senior Project Manager con experiencia previa como Fullstack Developer, Analista Funcional y Coordinador de Proyectos. Me especializo en liderar equipos ágiles, estructurar procesos de trabajo y asegurar que cada proyecto avance con claridad, orden y propósito. Disfruto trabajar en roles donde el impacto es visible y donde puedo aportar organización, comunicación efectiva y una visión orientada a resultados.",
     },
 
     experience: {
@@ -16,59 +16,61 @@ export const defaultTexts = {
       jobs: [
         {
           role: "SR Project Manager",
-          company: "Scalemote / BIGGER Tech",
+          company: "Scalemote / BIGGER",
           dates: "02/2025 - 08/2025",
           description:
-            "Trabajé como Senior Project Manager en Scalemote / BIGGER, una software factory australiana enfocada en proyectos de Blockchain. Fui el responsable del seguimiento integral de los proyectos, la coordinación con equipos internacionales y la planificación estratégica para entregas de alto impacto.",
+            "Trabajé como SR Project Manager en Scalemote / BIGGER, una software factory australiana especializada en proyectos de Blockchain. Junto a un equoi de PMs guiamos a verios desarrolladores expertos en blackchain para crear productos que le aporten algun valor agregado a Stellar Foundation. ",
         },
         {
           role: "IT Project Manager",
           company: "Werden / IT Rock",
           dates: "08/2024 - 11/2024",
           description:
-            "Me desempeñé como Project Manager en una empresa nacional de soluciones tecnológicas. Fue una posición por tiempo determinado donde también cumplí funciones de Product Owner y Analista Funcional. Mis tareas incluyeron seguimiento de proyectos de software, creación de HUs, Roadmaps, estimaciones de tiempos, definiciones funcionales con clientes y presentaciones a stakeholders.",
+            "Me desempeñé como Project Manager en una empresa nacional de soluciones tecnológicas. Fue una posición por tiempo predeterminado donde también cumplí funciones de Product Owner y Analista Funcional. Algunas de mis tareas incluyeron el seguimiento de proyectos de software, creación de HUs, roadmaps, estimaciones de tiempos, definiciones de producto con clientes y presentaciones a stakeholders.",
         },
         {
           role: "Project Analyst",
           company: "HANSEN Technologies",
           dates: "01/2024 - 03/2024",
           description:
-            "Trabajé como Project Analyst en una empresa internacional especializada en billing y creación de CRMs. La posición fue completamente en inglés y estuvo enfocada en optimización de flujos, análisis funcional, diseño de plantillas y automatizaciones internas. Realicé presentaciones diarias a stakeholders y trabajé con herramientas de Atlassian para mejorar equipos remotos.",
+            "Trabajé como Project Analyst en una empresa internacional especializada en billing y creación de CRMs. Fue una posición completamente en inglés, enfocada en análisis y optimización de proyectos. Utilicé herramientas de Atlassian y propias para automatizar procesos, mejorar flujos de trabajo y generar documentos para stakeholders.",
         },
+
         {
           role: "Project Administrator",
           company: "PwC Acceleration Center Argentina",
           dates: "06/2023 - 01/2024",
           description:
-            "Me desempeñé como Project Administrator/Coordinator con tareas como análisis de datos, optimización de procesos, automatización de reportes, control de documentación sensible y coordinación con Project Managers globales. También apoyé la estandarización de flujos y plantillas internas.",
+            "En PwC me desempeñé como Project Administrator dentro de equipos globales. Mis tareas incluyeron control y normalización de documentación, reportería operativa, análisis de datos y propuestas de mejora para optimizar procesos internos. También desarrollé plantillas estandarizadas, gestioné tableros de seguimiento y colaboré con Project Managers internacionales para facilitar la coordinación entre equipos técnicos y funcionales.",
         },
+
         {
           role: "Project Manager",
           company: "Correo Argentino",
           dates: "01/2023 - 04/2023",
           description:
-            "Fui promovido de Delivery Manager a Project Manager por desempeño. Me encargué de estudios de viabilidad, análisis técnico-funcional, preparación y presentación de proyectos para aprobación, estimaciones presupuestarias y coordinación entre equipos técnicos y directivos.",
+            "Por mi buen desempeño en CA, me ascendieron de Delivery Manager a Project Manager. Aquí me encargué de estudios de viabilidad, análisis técnico-funcional, presentación de proyectos a stakeholders y estimación de requerimientos presupuestarios.",
         },
         {
           role: "Analista Funcional / Delivery Manager",
           company: "Correo Argentino",
           dates: "10/2022 - 01/2023",
           description:
-            "Trabajé en Gestión de la Demanda como Analista Funcional. Realicé seguimiento de HUs, análisis con usuarios, reportes en Jira/Confluence y coordinación de proyectos ágiles. También participé en relevamientos y documentación funcional.",
+            "En Correo Argentino inicialmente me desempeñé como Analista Funcional en Gestión de la Demanda. Me encargué de seguimiento de historias de usuario, informes en Jira/Confluence y gestión de proyectos con metodologías ágiles.",
         },
         {
           role: "Analista Funcional",
           company: "OSPe",
           dates: "02/2022 - 05/2022",
           description:
-            "Participé en análisis y relevamiento de requerimientos, diseño preliminar de interfaces, testing funcional y coordinación entre usuarios y desarrolladores. Gestioné documentación y validaciones con el cliente interno.",
+            "Participé en análisis y relevamiento de requerimientos de usuario. Coordiné reuniones con usuarios y desarrolladores. Realicé testing funcional y prototipado de interfaces.",
         },
         {
           role: "Fullstack Developer / Analista Funcional",
           company: "Freelance",
           dates: "05/2021 - 10/2021",
           description:
-            "Desarrollé aplicaciones para PyMEs. También realicé documentación funcional, prototipado, diagramas de casos de uso, reuniones con clientes, testing funcional y capacitación de usuarios.",
+            "Desarrollé aplicaciones para PyMEs. También realicé documentación, prototipado, diagramas de casos de uso, seguimiento con clientes y testing funcional.",
         },
       ],
     },
@@ -97,9 +99,10 @@ export const defaultTexts = {
     },
   },
 
-  /* ============================================================
-     ========================== ENGLISH ==========================
-     ============================================================ */
+  // ================================
+  //         VERSION ENGLISH
+  // ================================
+
   en: {
     home: {
       title: "Patricio Marino Bata",
@@ -109,7 +112,7 @@ export const defaultTexts = {
     about: {
       title: "About Me",
       description:
-        "I am a Senior Project Manager with previous experience as a Fullstack Developer, Functional Analyst, and Project Coordinator. I specialize in leading technology initiatives where my work has clear and measurable impact. I’m highly focused on agile methodologies, structured communication, and practical problem-solving. I enjoy working in environments where organization, analysis, and coordination are essential for success.",
+        "I am a Senior Project Manager with previous experience as a Fullstack Developer, Functional Analyst, and Project Coordinator. I specialize in leading agile teams, structuring workflows, and ensuring that every project progresses with clarity and purpose. I thrive in roles where the impact is visible and where I can bring organization, strong communication, and a results-oriented mindset.",
     },
 
     experience: {
@@ -117,59 +120,61 @@ export const defaultTexts = {
       jobs: [
         {
           role: "SR Project Manager",
-          company: "Scalemote / BIGGER Tech",
+          company: "Scalemote / BIGGER",
           dates: "02/2025 - 08/2025",
           description:
-            "I worked as Senior Project Manager at Scalemote / BIGGER, an Australian software factory focused on Blockchain projects. I was responsible for full project oversight, international team coordination, and strategic planning to ensure high-impact deliveries.",
+            "I worked as a Senior Project Manager at Scalemote / BIGGER, an Australian software factory specialized in Blockchain projects.",
         },
         {
           role: "IT Project Manager",
           company: "Werden / IT Rock",
           dates: "08/2024 - 11/2024",
           description:
-            "I worked as Project Manager in a national tech solutions company. It was a fixed-term role where I also performed Product Owner and Functional Analyst responsibilities. My work included backlog creation, roadmaps, time estimation, user story writing, product definition with clients, and stakeholder presentations.",
+            "I worked as an IT Project Manager in a national technology company. It was a fixed-term role where I also acted as Product Owner and Functional Analyst. My responsibilities included software project tracking, user story creation, roadmap planning, time estimations, product definition with clients, and stakeholder presentations.",
         },
         {
           role: "Project Analyst",
           company: "HANSEN Technologies",
           dates: "01/2024 - 03/2024",
           description:
-            "I worked entirely in English as a Project Analyst for an international billing and CRM company. I focused on workflow optimization, internal automation, template design, and daily presentations to stakeholders. I collaborated with global teams using Atlassian tools and internal systems.",
+            "I worked as a Project Analyst at an international company focused on billing and CRM development. This was a fully English-speaking role centered on process analysis, workflow optimization, automation and documentation, and daily collaboration with stakeholders.",
         },
+
         {
           role: "Project Administrator",
           company: "PwC Acceleration Center Argentina",
           dates: "06/2023 - 01/2024",
           description:
-            "I performed data analysis, process optimization, template standardization, documentation control, and coordination with international Project Managers. I also worked on automation of internal reporting and improving communication flows.",
+            "At PwC I worked as a Project Administrator within global teams. I handled documentation control, operational reporting, process optimization, and data analysis. I also designed standardized templates, managed tracking dashboards, and collaborated with international Project Managers to improve coordination between technical and functional teams.",
         },
+
         {
           role: "Project Manager",
           company: "Correo Argentino",
           dates: "01/2023 - 04/2023",
           description:
-            "Promoted from Delivery Manager to Project Manager due to performance. I led feasibility studies, technical and functional analysis, project presentations for approval, budget estimations, and coordination between technical teams and executives.",
+            "I was promoted from Delivery Manager to Project Manager after strong performance. I led feasibility studies, technical-functional analysis, stakeholder presentations, and budget requirement estimations.",
         },
         {
           role: "Functional Analyst / Delivery Manager",
           company: "Correo Argentino",
           dates: "10/2022 - 01/2023",
           description:
-            "Worked in Demand Management as Functional Analyst. Responsible for user story tracking, Jira/Confluence reporting, agile project coordination, and requirement documentation.",
+            "I worked as a Functional Analyst in the Demand Management department. I handled user story tracking, Jira/Confluence reporting, and supported agile project coordination.",
         },
         {
           role: "Functional Analyst",
           company: "OSPe",
           dates: "02/2022 - 05/2022",
           description:
-            "Conducted requirement analysis, interface prototyping, functional testing, and coordination between internal users and development teams. Managed documentation and validation processes.",
+            "I conducted requirement analysis, prototyping, functional testing, and participated in meetings between users and developers.",
         },
         {
           role: "Fullstack Developer / Business Analyst",
           company: "Freelance",
           dates: "05/2021 - 10/2021",
           description:
-            "Developed applications for SMEs and performed functional documentation, prototyping, use case diagrams, testing, client meetings, and user onboarding.",
+            "I developed applications for SMEs and handled documentation, prototyping, use case diagrams, client demos, and functional testing.",
         },
       ],
     },
