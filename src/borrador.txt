@@ -1,5 +1,42 @@
-¿Contas con experiencia en la posición? Indique en cuales tareas.
+La seccion de pruebas
+
+La clave van a ser las conecciones. 
+Con encontrar un eslabon debil podes romper la cadena y tenes ls extremos
+
+Gente
+
+Juan Roman Riquelme
+Ameal
+
+++CDF 
+Cascini
+Cerna
+Bermudez
+Delgado
+Chanchi //Adjacente CDF
+
+Nombres importante
+Ricardo Rosica (Secretario General)
+Carlos Montero (Tesorero)
+Orlando Giménez (Área Legal)
+Adriana Bravo (Departamento de Inclusión)
+Emiliano Algieri (Prosecretario)
+
+Puntos de posible malversacion de fondos
+
+Distribucion incompetente de capital
+Tratos no declarados con representantes
+Venta ilegal de entradas
+Venta ilegal de otros productos asociados al club
+
+Pruebas de esto
+
+//buscar ---------------------
 
 
- Tengo casi 5 años liderando proyectos de IT. Comencé como desarrollador, luego transicioné a Delivery Manager, y luego continue en posiciones de Management (Como PM, Project Analyst, y Coordinator), principalmente para empresas internacionales. Usualmente me encargo de la gestión de los proyectos, la documentación técnica y no técnica, los casos de uso, las historias de usuario, los roadmaps, las ceremonias de SCRUM, alineamientos de SLA, etc. 
-Vean mis certificaciones en patriciomarino.com .
+
+
+
+
+
+
