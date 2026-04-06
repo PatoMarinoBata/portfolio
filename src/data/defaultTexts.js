@@ -78,7 +78,7 @@ export const defaultTexts = {
     studies: {
       title: "Estudios y Certificaciones",
       items: [
-        "⚡ Ingeniería en Sistemas de Información – UTN FRD (90 % completado; graduación estimada: junio 2026)",
+        "⚡ Ingeniería en Sistemas de Información – UTN FRD (95 % completado; graduación estimada: junio 2026)",
         "Scrum Master / Metodologías Ágiles",
         "Certificaciones en Jira, Power BI, DevOps",
       ],
@@ -182,7 +182,7 @@ export const defaultTexts = {
     studies: {
       title: "Studies & Certifications",
       items: [
-        "⚡ Bachelor in Information Systems – UTN FRD (95% completed; expected graduation: June 2026)",
+        "⚡ Bachelor in Information Systems  Engineering – UTN FRD (95% completed; expected graduation: June 2026)",
         "Scrum Master / Agile Methodologies",
         "Certifications in Jira, Power BI, DevOps",
       ],
