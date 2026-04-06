@@ -4,8 +4,8 @@ import { defaultTexts } from "./data/defaultTexts";
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState("es");
-  const [texts, setTexts] = useState(defaultTexts["es"]);
+  const [language, setLanguage] = useState("en");
+  const [texts, setTexts] = useState(defaultTexts["en"]);
 
   useEffect(() => {
     try {
