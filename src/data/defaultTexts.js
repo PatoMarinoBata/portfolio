@@ -17,13 +17,13 @@ export const defaultTexts = {
         {
           role: "SR Project Manager",
           company: "Scalemote / BIGGER",
-          dates: "02/2025 - 08/2025",
+          dates: "02/2025 - 09/2025",
           description:
-            "Trabajé como SR Project Manager en Scalemote / BIGGER, una software factory australiana especializada en proyectos de Blockchain. Junto a un equoi de PMs guiamos a verios desarrolladores expertos en blackchain para crear productos que le aporten algun valor agregado a Stellar Foundation. ",
+            "Trabajé como SR Project Manager en BIGGER, una software factory australiana especializada en proyectos de Blockchain. Junto a un equipo de PMs guiamos a varios desarrolladores expertos en blockchain para crear productos que le aporten algún valor agregado a Stellar Foundation. ",
         },
         {
-          role: "IT Project Manager",
-          company: "Werden / IT Rock",
+          role: "Project Manager",
+          company: "IT Rock",
           dates: "08/2024 - 11/2024",
           description:
             "Me desempeñé como Project Manager en una empresa nacional de soluciones tecnológicas. Fue una posición por tiempo predeterminado donde también cumplí funciones de Product Owner y Analista Funcional. Algunas de mis tareas incluyeron el seguimiento de proyectos de software, creación de HUs, roadmaps, estimaciones de tiempos, definiciones de producto con clientes y presentaciones a stakeholders.",
@@ -31,7 +31,7 @@ export const defaultTexts = {
         {
           role: "Project Analyst",
           company: "HANSEN Technologies",
-          dates: "01/2024 - 03/2024",
+          dates: "01/2024 - 06/2024",
           description:
             "Trabajé como Project Analyst en una empresa internacional especializada en billing y creación de CRMs. Fue una posición completamente en inglés, enfocada en análisis y optimización de proyectos. Utilicé herramientas de Atlassian y propias para automatizar procesos, mejorar flujos de trabajo y generar documentos para stakeholders.",
         },
@@ -39,7 +39,7 @@ export const defaultTexts = {
         {
           role: "Project Administrator",
           company: "PwC Acceleration Center Argentina",
-          dates: "06/2023 - 01/2024",
+          dates: "05/2023 - 01/2024",
           description:
             "En PwC me desempeñé como Project Administrator dentro de equipos globales. Mis tareas incluyeron control y normalización de documentación, reportería operativa, análisis de datos y propuestas de mejora para optimizar procesos internos. También desarrollé plantillas estandarizadas, gestioné tableros de seguimiento y colaboré con Project Managers internacionales para facilitar la coordinación entre equipos técnicos y funcionales.",
         },
@@ -120,14 +120,14 @@ export const defaultTexts = {
       jobs: [
         {
           role: "SR Project Manager",
-          company: "Scalemote / BIGGER",
-          dates: "02/2025 - 08/2025",
+          company: "BIGGER",
+          dates: "02/2025 - Present",
           description:
-            "I worked as a Senior Project Manager at Scalemote / BIGGER, an Australian software factory specialized in Blockchain projects.",
+            "I worked as a Senior Project Manager at BIGGER, an Australian software factory specialized in Blockchain projects.",
         },
         {
           role: "IT Project Manager",
-          company: "Werden / IT Rock",
+          company: "IT Rock",
           dates: "08/2024 - 11/2024",
           description:
             "I worked as an IT Project Manager in a national technology company. It was a fixed-term role where I also acted as Product Owner and Functional Analyst. My responsibilities included software project tracking, user story creation, roadmap planning, time estimations, product definition with clients, and stakeholder presentations.",
@@ -135,7 +135,7 @@ export const defaultTexts = {
         {
           role: "Project Analyst",
           company: "HANSEN Technologies",
-          dates: "01/2024 - 03/2024",
+          dates: "01/2024 - 06/2024",
           description:
             "I worked as a Project Analyst at an international company focused on billing and CRM development. This was a fully English-speaking role centered on process analysis, workflow optimization, automation and documentation, and daily collaboration with stakeholders.",
         },
@@ -143,7 +143,7 @@ export const defaultTexts = {
         {
           role: "Project Administrator",
           company: "PwC Acceleration Center Argentina",
-          dates: "06/2023 - 01/2024",
+          dates: "05/2023 - 01/2024",
           description:
             "At PwC I worked as a Project Administrator within global teams. I handled documentation control, operational reporting, process optimization, and data analysis. I also designed standardized templates, managed tracking dashboards, and collaborated with international Project Managers to improve coordination between technical and functional teams.",
         },
@@ -172,9 +172,9 @@ export const defaultTexts = {
         {
           role: "Fullstack Developer / Business Analyst",
           company: "Freelance",
-          dates: "05/2021 - 10/2021",
+          dates: "05/2021 - 11/2021",
           description:
-            "I developed applications for SMEs and handled documentation, prototyping, use case diagrams, client demos, and functional testing.",
+            "I developed applications for startups whilst also handling documentation, prototyping, use case diagrams, client demos, and functional testing.",
         },
       ],
     },
@@ -182,7 +182,7 @@ export const defaultTexts = {
     studies: {
       title: "Studies & Certifications",
       items: [
-        "⚡ Bachelor in Information Systems – UTN FRD (90% completed; expected graduation: June 2026)",
+        "⚡ Bachelor in Information Systems – UTN FRD (95% completed; expected graduation: June 2026)",
         "Scrum Master / Agile Methodologies",
         "Certifications in Jira, Power BI, DevOps",
       ],
