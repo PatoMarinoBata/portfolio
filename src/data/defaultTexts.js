@@ -19,7 +19,7 @@ export const defaultTexts = {
           company: "Scalemote / BIGGER",
           dates: "02/2025 - 09/2025",
           description:
-            "Trabajé como SR Project Manager en BIGGER, una software factory australiana especializada en proyectos de Blockchain. Junto a un equipo de PMs guiamos a varios desarrolladores expertos en blockchain para crear productos que le aporten algún valor agregado a Stellar Foundation. ",
+            "Trabajé como SR Project Manager en BIGGER, una software factory australiana especializada en proyectos de Blockchain. Junto a un equipo de Project Managers guiamos a varios desarrolladores expertos en blockchain para crear productos que le aporten algún valor agregado a Stellar Foundation. ",
         },
         {
           role: "Project Manager",
@@ -39,7 +39,7 @@ export const defaultTexts = {
         {
           role: "Project Administrator",
           company: "PwC Acceleration Center Argentina",
-          dates: "05/2023 - 01/2024",
+          dates: "06/2023 - 01/2024",
           description:
             "En PwC me desempeñé como Project Administrator dentro de equipos globales. Mis tareas incluyeron control y normalización de documentación, reportería operativa, análisis de datos y propuestas de mejora para optimizar procesos internos. También desarrollé plantillas estandarizadas, gestioné tableros de seguimiento y colaboré con Project Managers internacionales para facilitar la coordinación entre equipos técnicos y funcionales.",
         },
@@ -143,7 +143,7 @@ export const defaultTexts = {
         {
           role: "Project Administrator",
           company: "PwC Acceleration Center Argentina",
-          dates: "05/2023 - 01/2024",
+          dates: "06/2023 - 01/2024",
           description:
             "At PwC I worked as a Project Administrator within global teams. I handled documentation control, operational reporting, process optimization, and data analysis. I also designed standardized templates, managed tracking dashboards, and collaborated with international Project Managers to improve coordination between technical and functional teams.",
         },
@@ -182,7 +182,7 @@ export const defaultTexts = {
     studies: {
       title: "Studies & Certifications",
       items: [
-        "⚡ Bachelor in Information Systems  Engineering – UTN FRD (95% completed; expected graduation: June 2026)",
+        "⚡ Bachelor in Information Systems Engineering – UTN FRD (95% completed; expected graduation: June 2026)",
         "Scrum Master / Agile Methodologies",
         "Certifications in Jira, Power BI, DevOps",
       ],
