@@ -16,7 +16,7 @@ export const defaultTexts = {
       jobs: [
         {
           role: "SR Project Manager",
-          company: "Scalemote / BIGGER",
+          company: "BIGGER",
           dates: "02/2025 - 09/2025",
           description:
             "Trabajé como SR Project Manager en BIGGER, una software factory australiana especializada en proyectos de Blockchain. Junto a un equipo de Project Managers guiamos a varios desarrolladores expertos en blockchain para crear productos que le aporten algún valor agregado a Stellar Foundation. ",
