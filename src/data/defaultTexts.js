@@ -121,7 +121,7 @@ export const defaultTexts = {
         {
           role: "SR Project Manager",
           company: "BIGGER",
-          dates: "02/2025 - Present",
+          dates: "02/2025 - 09/2025",
           description:
             "I worked as a Senior Project Manager at BIGGER, an Australian software factory specialized in Blockchain projects.",
         },
