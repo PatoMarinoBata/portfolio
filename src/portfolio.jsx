@@ -78,6 +78,10 @@ export default function Portfolio() {
       ],
     },
     {
+      title: "Project Management Institute",
+      description: texts.studies.items[3],
+    },
+    {
       title: "Jira / Atlassian",
       items: [
         "Basic Reporting in Jira Badge",
@@ -267,11 +271,17 @@ export default function Portfolio() {
                   </button>
                 </div>
                 {openCertIndex === idx && (
-                  <ul className="mt-2 list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-1">
-                    {cert.items.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
+                  cert.items ? (
+                    <ul className="mt-2 list-disc list-inside text-sm md:text-base lg:text-lg text-gray-300 space-y-1">
+                      {cert.items.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="mt-2 text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed">
+                      {cert.description}
+                    </p>
+                  )
                 )}
               </div>
             ))}
