@@ -29,27 +29,9 @@ export const LanguageProvider = ({ children }) => {
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem("portfolioTexts");
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        const langData = parsed[language];
-        if (
-          langData?.navbar?.home &&
-          langData?.about?.title &&
-          langData?.contact?.title &&
-          langData?.experience?.title &&
-          Array.isArray(langData.experience.jobs)
-        ) {
-          setTexts(langData);
-        } else {
-          console.warn("❗ Datos incompletos en localStorage. Usando defaultTexts.");
-          setTexts(defaultTexts[language]);
-        }
-      } else {
-        setTexts(defaultTexts[language]);
-      }
+      setTexts(defaultTexts[language]);
     } catch (e) {
-      console.error("❗ Error al leer textos. Usando defaultTexts.", e);
+      console.error("❗ Error al cargar los textos. Usando defaultTexts.", e);
       setTexts(defaultTexts[language]);
     }
   }, [language]);
