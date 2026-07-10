@@ -78,10 +78,6 @@ export default function Portfolio() {
       ],
     },
     {
-      title: "Project Management Institute",
-      description: texts.studies.items[3],
-    },
-    {
       title: "Jira / Atlassian",
       items: [
         "Basic Reporting in Jira Badge",
@@ -249,10 +245,20 @@ export default function Portfolio() {
           </h2>
 
           {/* Banner destacado de la carrera */}
-          <div className="bg-blue-500/30 border border-blue-400 rounded-lg p-4 mb-6 text-white">
-            <p className="text-sm md:text-base font-medium leading-relaxed">
-              {texts.studies.items[0]}
-            </p>
+          <div className="space-y-4 mb-6">
+            <div className="bg-blue-500/30 border border-blue-400 rounded-lg p-4 text-white">
+              <p className="text-sm md:text-base font-medium leading-relaxed whitespace-pre-line">
+                {texts.studies.items[0]}
+              </p>
+            </div>
+
+            {texts.studies.items[3] && (
+              <div className="bg-blue-500/20 border border-blue-400/60 rounded-lg p-4 text-white">
+                <p className="text-sm md:text-base font-medium leading-relaxed whitespace-pre-line">
+                  {texts.studies.items[3]}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Acordeón de certificaciones */}

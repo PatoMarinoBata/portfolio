@@ -78,10 +78,10 @@ export const defaultTexts = {
     studies: {
       title: "Estudios y logros",
       items: [
-        "⚡ Ingeniería en Sistemas de Información – UTN FRD (95 % completado; graduación estimada: septiembre 2026)",
+        "⚡ Ingeniería en Sistemas de Información – UTN FRD\n95 % completado; graduación estimada: septiembre 2026",
         "Scrum Master / Metodologías Ágiles",
         "Certificaciones en Jira, Power BI, DevOps",
-        "Project Management Institute — Lideré a la UTN FRD en la Liga GP+, representando a la Argentina por primera vez en una competición del PMI y clasificándola a los Playoffs.",
+        "Project Management Institute\nLideré a la UTN FRD en la Liga GP+, representando a la Argentina por primera vez en una competición del PMI y clasificándola a los Playoffs.",
       ],
     },
 
@@ -183,10 +183,10 @@ export const defaultTexts = {
     studies: {
       title: "Studies and Accomplishments",
       items: [
-        "⚡ Bachelor in Information Systems Engineering – UTN FRD (95% completed; expected graduation: September 2026)",
+        "⚡ Bachelor in Information Systems Engineering – UTN FRD\n95% completed; expected graduation: September 2026",
         "Scrum Master / Agile Methodologies",
         "Certifications in Jira, Power BI, DevOps",
-        "Project Management Institute — I led UTN FRD in the GP+ League, representing Argentina for the first time in a PMI competition and qualifying the team for the Playoffs.",
+        "Project Management Institute\nI led UTN FRD in the GP+ League, representing Argentina for the first time in a PMI competition and qualifying the team for the Playoffs.",
       ],
     },
 
