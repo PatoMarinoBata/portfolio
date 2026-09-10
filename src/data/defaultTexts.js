@@ -128,7 +128,7 @@ export const defaultTexts = {
       jobs: [
         {
           role: "Senior Technical Project Manager",
-          company: "Current Employer",
+          company: "Confidential",
           dates: "08/2026 - Present",
           description:
             "I am currently working as a Senior Technical Project Manager and am not seeking new positions.",
