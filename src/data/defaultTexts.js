@@ -15,6 +15,13 @@ export const defaultTexts = {
       title: "Experiencia",
       jobs: [
         {
+          role: "Senior Technical Project Manager",
+          company: "Empresa actual",
+          dates: "08/2026 - Actualmente",
+          description:
+            "Actualmente me desempeño como Senior Technical Project Manager y no estoy buscando nuevas posiciones.",
+        },
+        {
           role: "SR Project Manager",
           company: "BIGGER",
           dates: "02/2025 - 09/2025",
@@ -119,6 +126,13 @@ export const defaultTexts = {
     experience: {
       title: "Experience",
       jobs: [
+        {
+          role: "Senior Technical Project Manager",
+          company: "Current Employer",
+          dates: "08/2026 - Present",
+          description:
+            "I am currently working as a Senior Technical Project Manager and am not seeking new positions.",
+        },
         {
           role: "SR Project Manager",
           company: "BIGGER",
