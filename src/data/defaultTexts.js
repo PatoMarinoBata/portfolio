@@ -15,11 +15,18 @@ export const defaultTexts = {
       title: "Experiencia",
       jobs: [
         {
-          role: "Senior Technical Project Manager",
-          company: "Confidencial",
-          dates: "08/2026 - Actualmente",
+          role: "SR Technical Project Manager",
+          company: "Episode Six",
+          dates: "07/2026 - Actualmente",
           description:
-            "Actualmente me desempeño como Senior Technical Project Manager y no estoy buscando nuevas posiciones.",
+            "Lidero proyectos técnicos globales en un entorno ágil, definiendo alcance y planes de entrega junto con Ingeniería y DevOps. Coordino recursos, riesgos y dependencias de infraestructura y releases, y mantengo alineados a los equipos técnicos, Producto, Soporte y clientes mediante comunicación clara, documentación y seguimiento de hitos.",
+        },
+        {
+          role: "Project Manager",
+          company: "DataCristal",
+          dates: "09/2025 - 07/2026",
+          description:
+            "Coordiné flujos de trabajo, cronogramas y entregables en proyectos de carga y procesamiento de datos. Supervisé avances y calidad, prioricé tareas y mantuve la comunicación con equipos y stakeholders para cumplir plazos y requerimientos del negocio.",
         },
         {
           role: "SR Project Manager",
@@ -127,11 +134,18 @@ export const defaultTexts = {
       title: "Experience",
       jobs: [
         {
-          role: "Senior Technical Project Manager",
-          company: "Confidential",
-          dates: "08/2026 - Present",
+          role: "SR Technical Project Manager",
+          company: "Episode Six",
+          dates: "07/2026 - Present",
           description:
-            "I am currently working as a Senior Technical Project Manager and am not seeking new positions.",
+            "I lead technical projects in a global, agile environment, defining scope and delivery plans with Engineering and DevOps. I coordinate resources, risks, and infrastructure and release dependencies, while keeping technical teams, Product, Support, and customers aligned through clear communication, documentation, and milestone reporting.",
+        },
+        {
+          role: "Project Manager",
+          company: "DataCristal",
+          dates: "09/2025 - 07/2026",
+          description:
+            "I coordinated workflows, timelines, and deliverables for data loading and processing projects. I tracked progress and quality, set priorities, and kept teams and stakeholders aligned to meet deadlines and business requirements.",
         },
         {
           role: "SR Project Manager",
