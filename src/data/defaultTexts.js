@@ -92,7 +92,7 @@ export const defaultTexts = {
     studies: {
       title: "Estudios & logros",
       items: [
-        "⚡ Ingeniería en Sistemas de Información – UTN FRD\n95 % completado, con fecha de graduación en diciembre 2026",
+        "⚡ Ingeniería en Sistemas de Información – UTN FRD\nCursada terminada",
         "Scrum Master / Metodologías Ágiles",
         "Certificaciones en Jira, Power BI, DevOps",
         "Project Management Institute\nLideré a la UTN FRD en la Liga GP+, representando a la Argentina por primera vez en una competición del PMI y clasificándola a los Playoffs.",
@@ -211,7 +211,7 @@ export const defaultTexts = {
     studies: {
       title: "Studies & Accomplishments",
       items: [
-        "⚡ Bachelor in Information Systems Engineering – UTN FRD\n95% completed, with a graduation date of December 2026",
+        "⚡ Bachelor in Information Systems Engineering – UTN FRD\nCoursework completed",
         "Scrum Master / Agile Methodologies",
         "Certifications in Jira, Power BI, DevOps",
         "Project Management Institute\nI led UTN FRD in the GP+ League, representing Argentina for the first time in a PMI competition and qualifying the team for the Playoffs.",
